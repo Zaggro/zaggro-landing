@@ -1,5 +1,11 @@
+:root {
+}
+
+$font-family-primary: 'Poppins', serif;
+$font-family-secondary: 'DMSans', sans-serif;
+
 $breakpoints: (
-  sm: 576px,
+  sm: 375px,
   md: 768px,
   lg: 1024px,
   xl: 1440px,
