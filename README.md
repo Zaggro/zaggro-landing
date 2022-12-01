@@ -1,1 +1,1 @@
-# zaggro-landing
+# Zaggro
