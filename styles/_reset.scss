@@ -26,6 +26,11 @@ button {
   cursor: revert;
 }
 
+a:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 /* Remove list styles (bullets/numbers) */
 ol,
 ul,

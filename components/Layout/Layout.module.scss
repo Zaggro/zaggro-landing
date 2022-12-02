@@ -1,0 +1,16 @@
+.bgImage {
+  max-width: 1440px;
+  margin: auto;
+  height: 100vh;
+  position: relative;
+  background-image: url('/images/backgrounds/mobile.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  @include breakpoint('lg') {
+    background-image: url('/images/backgrounds/desktop.png');
+  }
+  @include breakpoint('xl') {
+    background-image: url('/images/backgrounds/wide-desktop.png');
+  }
+}
