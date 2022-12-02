@@ -1,39 +1,39 @@
 /* CSS color vars instead of Sass vars to make working with design easy */
 
 :root {
-  --var-primary-main: #0096ff;
-  --var-primary-lightest: #78c5fb;
-  --var-primary-lighter: #2ea8fd;
-  --var-primary-darker: #007ed6;
-  --var-primary-darkest: #0068b1;
+  --primary-main: #0096ff;
+  --primary-lightest: #78c5fb;
+  --primary-lighter: #2ea8fd;
+  --primary-darker: #007ed6;
+  --primary-darkest: #0068b1;
 
-  --var-secondary-main: #72ffff;
-  --var-secondary-lightest: #caffff;
-  --var-secondary-lighter: #98ffff;
-  --var-secondary-darker: #38e0e0;
-  --var-secondary-darkest: #28c5c5;
+  --secondary-main: #72ffff;
+  --secondary-lightest: #caffff;
+  --secondary-lighter: #98ffff;
+  --secondary-darker: #38e0e0;
+  --secondary-darkest: #28c5c5;
 
-  --var-tertiary-main: #5800ff;
-  --var-tertiary-lightest: #b68fff;
-  --var-tertiary-lighter: #8446f9;
-  --var-tertiary-darker: #4300c1;
-  --var-tertiary-darkest: #2d0180;
+  --tertiary-main: #5800ff;
+  --tertiary-lightest: #b68fff;
+  --tertiary-lighter: #8446f9;
+  --tertiary-darker: #4300c1;
+  --tertiary-darkest: #2d0180;
 
-  --var-gray-main: #614b89;
-  --var-gray-lightest: #c0b6d2;
-  --var-gray-lighter: #715f92;
-  --var-gray-darker: #442978;
-  --var-gray-darkest: #2d1a51;
+  --gray-main: #614b89;
+  --gray-lightest: #c0b6d2;
+  --gray-lighter: #715f92;
+  --gray-darker: #442978;
+  --gray-darkest: #2d1a51;
 
-  --var-text-gray: #c0b6d2;
-  --var-text-dark: #2d1a51;
-  --var-text-white: #ffffff;
+  --text-gray: #c0b6d2;
+  --text-dark: #2d1a51;
+  --text-white: #ffffff;
 
-  --var-black: #000000;
-  --var-white: #ffffff;
-  —-var-offwhite: #ebf7ff;
+  --black: #000000;
+  --white: #ffffff;
+  —-offwhite: #ebf7ff;
 
-  --var-succes: #56ff02;
-  —-var-warning: #ff9902;
-  —-var-error: #e50004;
+  --succes: #56ff02;
+  —-warning: #ff9902;
+  —-error: #e50004;
 }
