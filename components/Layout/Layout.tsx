@@ -6,7 +6,11 @@ interface LayoutProps {
 }
 
 function Layout({ children }: LayoutProps) {
-  return <div className={styles.root}>{children}</div>
+  return (
+    <div className={styles.root}>
+      <div className={styles.bgImage}>{children}</div>
+    </div>
+  )
 }
 
 export default Layout
