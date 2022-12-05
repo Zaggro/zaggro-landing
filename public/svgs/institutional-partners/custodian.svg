@@ -1,0 +1,18 @@
+<svg width="47" height="36" viewBox="0 0 47 36" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="l3z88a25wa">
+            <stop stop-color="#0095FF" offset="0%"/>
+            <stop stop-color="#5700FF" offset="100%"/>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="s0ojfdk52b">
+            <stop stop-color="#0095FF" offset="0%"/>
+            <stop stop-color="#5700FF" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(.003 .81)" fill="none" fill-rule="evenodd">
+        <path d="M39.39 34.848H3.317A3.314 3.314 0 0 1 0 31.536V2.732a2.734 2.734 0 0 0 2.736 2.732H39.39a3.314 3.314 0 0 1 3.317 3.312v22.76a3.314 3.314 0 0 1-3.317 3.312z" fill="url(#l3z88a25wa)" fill-rule="nonzero"/>
+        <rect fill="url(#s0ojfdk52b)" fill-rule="nonzero" x="27.379" y="12.145" width="18.671" height="13.288" rx="6.644"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="33.939" cy="18.79" rx="2.774" ry="2.77"/>
+        <path d="M2.736 0h32.953a2.735 2.735 0 0 1 2.736 2.732v2.732H2.735A2.735 2.735 0 0 1 0 2.732 2.734 2.734 0 0 1 2.736 0z" fill="#0096FF"/>
+    </g>
+</svg>
