@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 import Link from 'next/link'
+import { externalUrlRegex } from 'constants/regex'
 import styles from './Button.module.scss'
 
 export interface ButtonProps {
@@ -34,9 +35,6 @@ function Button({
   children,
   className,
 }: ButtonProps) {
-  const externalUrlRegex =
-    /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g
-
   const commonProps = {
     className: clsx(
       styles.root,
