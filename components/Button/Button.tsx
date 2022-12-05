@@ -68,7 +68,7 @@ function Button({
 
   if (href) {
     return (
-      <Link href={href} passHref {...commonProps}>
+      <Link href={href} {...commonProps}>
         {content}
       </Link>
     )

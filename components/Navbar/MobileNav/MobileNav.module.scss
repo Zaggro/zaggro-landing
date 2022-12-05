@@ -1,0 +1,146 @@
+.root {
+  width: 100%;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  &.open {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+.container {
+  height: 5rem;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+
+  img {
+    z-index: 3;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 0.5rem;
+    z-index: 3;
+  }
+}
+
+.menuBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    149deg,
+    var(--secondary-main) 9%,
+    rgba(255, 255, 255, 0.1) 29%,
+    rgba(255, 255, 255, 0.1) 74%,
+    var(--primary-main) 94%
+  );
+  border-image-slice: 1;
+  background-color: rgba(45, 26, 81);
+  @include transition(background-color);
+
+  &:hover {
+    .cross {
+      background-color: transparent;
+    }
+  }
+}
+
+.blurBorder {
+  position: absolute;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  border-style: solid;
+  border-width: 5px;
+  border-image-source: linear-gradient(
+    149deg,
+    var(--secondary-main) 9%,
+    rgba(57, 202, 255, 0) 52%,
+    var(--primary-main) 94%
+  );
+  border-image-slice: 1;
+}
+
+.hamburger {
+  display: flex;
+  position: relative;
+  background: white;
+  height: 2px;
+  width: 16px;
+  @include transition(background-color);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    background: white;
+    width: 100%;
+    height: 2px;
+    @include transition(transform);
+  }
+
+  &::after {
+    top: 6px;
+  }
+
+  &.cross {
+    background-color: transparent;
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.links {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 6.3125rem;
+  padding-right: 3.4375rem;
+  text-align: right;
+  z-index: 2;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background-color: linear-gradient(
+    347deg,
+    var(--tertiary-main) 98%,
+    var(--gray-main) 2%
+  );
+  z-index: 1;
+}
