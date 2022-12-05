@@ -10,6 +10,7 @@ interface MobileNavProps {
   className?: string
 }
 
+// TODO: Menu open/close animation
 function MobileNav({ className }: MobileNavProps) {
   const [open, setOpen] = useState(false)
 

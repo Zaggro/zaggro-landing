@@ -13,7 +13,7 @@
 }
 
 .container {
-  height: 5rem;
+  height: $mobile-sticky-nav-height;
   padding: 0 0.5rem;
   display: flex;
   align-items: center;

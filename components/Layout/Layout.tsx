@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import Navbar from 'components/Navbar/Navbar'
 import styles from './Layout.module.scss'
 
 interface LayoutProps {
@@ -7,9 +8,12 @@ interface LayoutProps {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className={styles.root}>
-      <div className={styles.bgImage}>{children}</div>
-    </div>
+    <main className={styles.root}>
+      <div className={styles.bgImage}>
+        <Navbar />
+        {children}
+      </div>
+    </main>
   )
 }
 

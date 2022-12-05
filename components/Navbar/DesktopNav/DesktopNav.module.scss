@@ -1,0 +1,52 @@
+@mixin headerMediaQuery() {
+  @media only screen and (min-width: 1275px) {
+    @content;
+  }
+}
+
+.root {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $desktop-sticky-nav-height;
+  padding: 0 3rem;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  @include headerMediaQuery {
+    justify-content: initial;
+  }
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  @include headerMediaQuery {
+    width: initial;
+    height: initial;
+  }
+}
+
+.links {
+  display: flex;
+  gap: 2.1875rem;
+  @include headerMediaQuery {
+    margin-left: 5.875rem;
+  }
+}
+
+.link {
+  @include transition(color);
+  &:hover {
+    color: #0096ff;
+  }
+}
+
+.button {
+  @include headerMediaQuery {
+    margin-left: auto;
+  }
+}
