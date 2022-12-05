@@ -1,0 +1,17 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px 3px 10px;
+  height: 24px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(45, 26, 81, 0.3);
+  font-family: DMSans;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.14;
+  text-align: center;
+  color: var(--others-white);
+  border-radius: 16px;
+  background-color: var(--gray-darker);
+}
