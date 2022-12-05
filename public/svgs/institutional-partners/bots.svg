@@ -1,0 +1,16 @@
+<svg width="50" height="39" viewBox="0 0 50 39" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="bxq498qd4a">
+            <stop stop-color="#0095FF" offset="0%"/>
+            <stop stop-color="#5700FF" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(.003 .546)" fill="none" fill-rule="evenodd">
+        <path d="M41.5 14.343H25.688V6.736h-2.313v7.607H7.568a2.887 2.887 0 0 0-2.889 2.885v18.205a2.887 2.887 0 0 0 2.889 2.885h33.931a2.887 2.887 0 0 0 2.889-2.885V17.23a2.886 2.886 0 0 0-2.889-2.884v-.003z" fill="url(#bxq498qd4a)" fill-rule="nonzero"/>
+        <rect fill="#0096FF" x="9.577" y="20.094" width="29.916" height="12.474" rx="4.36"/>
+        <path d="M4.68 30.661h-.346A4.332 4.332 0 0 1 0 26.333a4.332 4.332 0 0 1 4.334-4.328h.345v8.656zM44.736 30.661h-.345v-8.656h.345a4.332 4.332 0 0 1 4.334 4.328 4.332 4.332 0 0 1-4.334 4.328z" fill="#0096FF"/>
+        <ellipse fill="#0096FF" cx="24.534" cy="5.013" rx="5.019" ry="5.013"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="31.45" cy="26.333" rx="3.299" ry="3.294"/>
+        <ellipse fill="#FFF" fill-rule="nonzero" cx="16.415" cy="26.333" rx="3.299" ry="3.294"/>
+    </g>
+</svg>
