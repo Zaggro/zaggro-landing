@@ -3,6 +3,10 @@
 @import './fonts';
 @import './colors';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-family-primary;
   font-weight: 400;

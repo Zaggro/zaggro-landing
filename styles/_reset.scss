@@ -23,12 +23,11 @@
 /* Reapply the pointer cursor for anchor tags */
 a,
 button {
-  cursor: revert;
+  cursor: pointer;
 }
 
-a:not(:disabled),
-button:not(:disabled) {
-  cursor: pointer;
+button:disabled {
+  cursor: not-allowed;
 }
 
 /* Remove list styles (bullets/numbers) */

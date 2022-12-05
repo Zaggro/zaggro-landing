@@ -17,9 +17,7 @@ $halfCircleImageSize: $circleImageSize / 2;
     var(--primary-main) 89%
   );
   border-image-slice: 1;
-
-  // TODO
-  background-color: rgba(56, 224, 224, 0.3);
+  background-color: rgba(56, 224, 224, 0.15);
 
   &.withIcon {
     margin-top: $halfCircleImageSize;

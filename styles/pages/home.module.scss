@@ -1,0 +1,8 @@
+.section {
+  height: 25rem;
+  scroll-margin-top: $mobile-sticky-nav-height;
+
+  @include breakpoint('md') {
+    scroll-margin-top: $desktop-sticky-nav-height;
+  }
+}

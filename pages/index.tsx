@@ -11,7 +11,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div>Home</div>
+        <section className={styles.section} id="the-protocol">
+          The Protocol
+        </section>
+        <section className={styles.section} id="integrations">
+          Integrations
+        </section>
+        <section className={styles.section} id="partners">
+          Partners
+        </section>
+        <section className={styles.section} id="audits">
+          Audits
+        </section>
+        <section className={styles.section} id="contact">
+          Contact
+        </section>
       </Layout>
     </div>
   )
