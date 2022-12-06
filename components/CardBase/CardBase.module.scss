@@ -46,6 +46,7 @@ $halfCircleImageSize: $circleImageSize / 2;
     var(--primary-main) 89%
   );
   border-image-slice: 1;
+  z-index: -1;
 }
 
 .iconContainer {
