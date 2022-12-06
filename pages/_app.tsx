@@ -7,10 +7,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Zaggro</title>
+        <title>ZAGGRO</title>
         <meta
           name="description"
-          content="Zaggro is the leading liquidity aggregator that combines the liquidity of DEXs and lending protocols into a comprehensive and secure interface and APIs"
+          content="ZAGGRO is the leading liquidity aggregator that combines the liquidity of DEXs and lending protocols into a comprehensive and secure interface and APIs"
         />
         <link rel="icon" href="/favicon.ico" />
         <link

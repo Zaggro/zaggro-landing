@@ -13,18 +13,18 @@ function Calculator({ className }: CalculatorProps) {
   return (
     <section className={clsx(styles.root, className)}>
       <Typography variant="h2" tag="h2" className={styles.title}>
-        Zaggro gives you MORE
+        ZAGGRO gives you MORE
       </Typography>
       <div className={styles.imageContainer}>
         {isTablet ? (
           <img
             src="/images/screenshots/calculator-desktop.png"
-            alt="Preview of the Zaggro calculator"
+            alt="Preview of the ZAGGRO calculator"
           />
         ) : (
           <img
             src="/images/screenshots/calculator-mobile.png"
-            alt="Preview of the Zaggro calculator"
+            alt="Preview of the ZAGGRO calculator"
             className={styles.mobileImage}
           />
         )}

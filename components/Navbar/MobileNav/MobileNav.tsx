@@ -31,7 +31,7 @@ function MobileNav({ className }: MobileNavProps) {
       <div className={styles.container}>
         <Image
           src="/images/logo/zaggro-mobile.png"
-          alt="Zaggro logo"
+          alt="ZAGGRO logo"
           width={161}
           height={44}
         />

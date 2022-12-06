@@ -27,12 +27,12 @@ const features = [
   {
     icon: <MultiChain />,
     title: 'Multichain',
-    text: 'Zaggro protocol is available on multiple blockchains. We currently support Metis and Avalanche. We scale blockchain integrations by volume & activity priority.',
+    text: 'ZAGGRO protocol is available on multiple blockchains. We currently support Metis and Avalanche. We scale blockchain integrations by volume & activity priority.',
   },
   {
     icon: <RFQ />,
     title: 'Onchain RFQ',
-    text: 'Zaggro pool is an on-chain “Request For Quotes” model. We aggregate real-time quotes from KYC verified and trusted market makers, offering liquidity to all traders.',
+    text: 'ZAGGRO pool is an on-chain “Request For Quotes” model. We aggregate real-time quotes from KYC verified and trusted market makers, offering liquidity to all traders.',
   },
   {
     icon: <Yield />,
@@ -50,7 +50,7 @@ function Protocol({ className }: ProtocolProps) {
   return (
     <div className={clsx(styles.root, className)}>
       <Typography variant="h2" tag="h2" className={styles.title}>
-        About Zaggro Protocol
+        About ZAGGRO Protocol
       </Typography>
       <Typography tag="p" variant="p-lg" className={styles.text}>
         Our mission is to thrive DeFi participation to the next level by

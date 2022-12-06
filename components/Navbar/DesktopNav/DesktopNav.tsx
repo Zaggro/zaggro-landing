@@ -16,7 +16,7 @@ function DesktopNav({ className }: DesktopNavProps) {
     <nav className={clsx(styles.root, className)}>
       <Image
         src="/images/logo/zaggro-desktop.png"
-        alt="Zaggro logo"
+        alt="ZAGGRO logo"
         width={300}
         height={82}
         className={styles.logo}
