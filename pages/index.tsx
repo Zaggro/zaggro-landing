@@ -1,10 +1,12 @@
 import styles from 'styles/pages/home.module.scss'
-import Hero from 'components/Hero/Hero'
+import Calculator from 'components/Homepage/Calculator/Calculator'
+import Hero from 'components/Homepage/Hero/Hero'
 
 export default function Home() {
   return (
     <div className={styles.root}>
       <Hero />
+      <Calculator />
       <section className={styles.section} id="the-protocol">
         The Protocol
       </section>
