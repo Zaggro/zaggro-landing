@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import clsx from 'clsx'
 import Typography from 'components/Typography/Typography'
 import useViewportSize from 'hooks/useViewportSize'
