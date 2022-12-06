@@ -4,6 +4,7 @@ import AppPreview from 'components/Homepage/AppPreview/AppPreview'
 import Calculator from 'components/Homepage/Calculator/Calculator'
 import Hero from 'components/Homepage/Hero/Hero'
 import Protocol from 'components/Homepage/Protocol/Protocol'
+import Statistics from 'components/Homepage/Statistics/Statistics'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       >
         <AppPreview />
         <Protocol />
+        <Statistics />
       </section>
       <section className={styles.section} id="integrations">
         Integrations
