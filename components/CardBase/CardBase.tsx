@@ -9,6 +9,7 @@ import styles from './CardBase.module.scss'
 
 export interface CardBaseProps {
   children: React.ReactNode
+  variant?: 'primary' | 'secondary'
   icon?: React.ReactElement
   href?: string
   target?: string
@@ -19,6 +20,7 @@ export interface CardBaseProps {
 
 function CardBase({
   children,
+  variant = 'primary',
   icon,
   comingSoon,
   href,
@@ -29,6 +31,7 @@ function CardBase({
   const commonProps = {
     className: clsx(
       styles.root,
+      styles[variant],
       href && styles.link,
       icon && styles.withIcon,
       comingSoon && styles.withComingSoon,
