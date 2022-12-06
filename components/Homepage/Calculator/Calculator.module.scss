@@ -9,6 +9,13 @@
   }
 }
 
-.image {
+.imageContainer {
   cursor: not-allowed;
+}
+
+.mobileImage {
+  max-width: 22.3125rem;
+  @include breakpoint('lg') {
+    max-width: none;
+  }
 }

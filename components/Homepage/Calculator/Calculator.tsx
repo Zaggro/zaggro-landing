@@ -15,7 +15,7 @@ function Calculator({ className }: CalculatorProps) {
       <Typography variant="h2" tag="h2" className={styles.title}>
         Zaggro gives you MORE
       </Typography>
-      <div className={styles.image}>
+      <div className={styles.imageContainer}>
         {isTablet ? (
           <img
             src="/images/screenshots/calculator-desktop.png"
@@ -25,6 +25,7 @@ function Calculator({ className }: CalculatorProps) {
           <img
             src="/images/screenshots/calculator-mobile.png"
             alt="Preview of the Zaggro calculator"
+            className={styles.mobileImage}
           />
         )}
       </div>
