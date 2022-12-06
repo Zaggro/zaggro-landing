@@ -3,6 +3,7 @@ import styles from 'styles/pages/home.module.scss'
 import AppPreview from 'components/Homepage/AppPreview/AppPreview'
 import Calculator from 'components/Homepage/Calculator/Calculator'
 import Hero from 'components/Homepage/Hero/Hero'
+import Integrations from 'components/Homepage/Integrations/Integrations'
 import Protocol from 'components/Homepage/Protocol/Protocol'
 import Statistics from 'components/Homepage/Statistics/Statistics'
 
@@ -20,7 +21,7 @@ export default function Home() {
         <Statistics />
       </section>
       <section className={styles.section} id="integrations">
-        Integrations
+        <Integrations />
       </section>
       <section className={styles.section} id="partners">
         Partners
