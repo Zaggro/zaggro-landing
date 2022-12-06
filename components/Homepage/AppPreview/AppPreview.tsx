@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import Typography from 'components/Typography/Typography'
+import SectionHeader from 'components/SectionHeader/SectionHeader'
 import styles from './AppPreview.module.scss'
 
 interface AppPreviewProps {
@@ -10,9 +10,7 @@ interface AppPreviewProps {
 function AppPreview({ className }: AppPreviewProps) {
   return (
     <section className={clsx(styles.root, className)}>
-      <Typography variant="h2" tag="h2" className={styles.title}>
-        ZAGGRO Protocol Preview
-      </Typography>
+      <SectionHeader title="ZAGGRO Protocol Preview" />
       <div className={styles.image}>
         <img
           src="/images/screenshots/platform-desktop.png"

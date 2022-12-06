@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import Typography from 'components/Typography/Typography'
+import SectionHeader from 'components/SectionHeader/SectionHeader'
 import useViewportSize from 'hooks/useViewportSize'
 import styles from './Calculator.module.scss'
 
@@ -12,9 +12,7 @@ function Calculator({ className }: CalculatorProps) {
 
   return (
     <section className={clsx(styles.root, className)}>
-      <Typography variant="h2" tag="h2" className={styles.title}>
-        ZAGGRO gives you MORE
-      </Typography>
+      <SectionHeader title="ZAGGRO gives you MORE" />
       <div className={styles.imageContainer}>
         {isTablet ? (
           <img

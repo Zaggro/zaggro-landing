@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import CardBase from 'components/CardBase/CardBase'
+import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
 import API from 'public/svgs/protocol/api.svg'
 import Liquidity from 'public/svgs/protocol/liquidity.svg'
@@ -49,15 +50,13 @@ const features = [
 function Protocol({ className }: ProtocolProps) {
   return (
     <div className={clsx(styles.root, className)}>
-      <Typography variant="h2" tag="h2" className={styles.title}>
-        About ZAGGRO Protocol
-      </Typography>
-      <Typography tag="p" variant="p-lg" className={styles.text}>
-        Our mission is to thrive DeFi participation to the next level by
+      <SectionHeader
+        title="About ZAGGRO Protocol"
+        description="Our mission is to thrive DeFi participation to the next level by
         offering secure, intelligent and optimized trading solutions for
         individuals and institutional traders to tap effortlessly into the
-        fragmented liquidity pools.
-      </Typography>
+        fragmented liquidity pools."
+      />
       <div className={styles.cards}>
         {features.map(({ icon, title, text }) => (
           <CardBase

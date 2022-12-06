@@ -2,13 +2,6 @@
   text-align: center;
 }
 
-.title {
-  margin-bottom: 1.25rem;
-  @include breakpoint('lg') {
-    margin-bottom: 1.875rem;
-  }
-}
-
 .imageContainer {
   cursor: not-allowed;
 }
