@@ -3,14 +3,15 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.625rem;
-  @include breakpoint('md') {
+  @include breakpoint('lg') {
     gap: 1.5rem;
   }
 }
 
 .card {
   padding: 1.25rem;
-  @include breakpoint('md') {
+  width: 100%;
+  @include breakpoint('lg') {
     flex-grow: 1;
     max-width: 27rem;
   }
