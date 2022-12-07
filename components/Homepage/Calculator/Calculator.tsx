@@ -8,20 +8,21 @@ interface CalculatorProps {
 }
 
 function Calculator({ className }: CalculatorProps) {
-  const { isTablet } = useViewportSize()
+  const { isPhablet } = useViewportSize()
 
   return (
     <section className={clsx(styles.root, className)}>
       <SectionHeader title="ZAGGRO gives you MORE" />
       <div className={styles.imageContainer}>
-        {isTablet ? (
+        {isPhablet ? (
           <img
-            src="/images/screenshots/calculator-desktop.png"
+            src="/images/screenshots/calculator-desktop@2.png"
             alt="Preview of the ZAGGRO calculator"
+            className={styles.desktopImage}
           />
         ) : (
           <img
-            src="/images/screenshots/calculator-mobile.png"
+            src="/images/screenshots/calculator-mobile@2.png"
             alt="Preview of the ZAGGRO calculator"
             className={styles.mobileImage}
           />

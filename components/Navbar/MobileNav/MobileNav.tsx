@@ -30,7 +30,7 @@ function MobileNav({ className }: MobileNavProps) {
     <nav className={clsx(styles.root, open && styles.open, className)}>
       <div className={styles.container}>
         <Image
-          src="/images/logo/zaggro-mobile.png"
+          src="/images/logo/zaggro.png"
           alt="ZAGGRO logo"
           width={161}
           height={44}

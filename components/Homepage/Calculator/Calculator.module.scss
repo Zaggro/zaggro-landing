@@ -6,9 +6,12 @@
   cursor: not-allowed;
 }
 
+.desktopImage {
+  max-width: 73.75rem;
+  width: 100%;
+}
+
 .mobileImage {
   max-width: 22.3125rem;
-  @include breakpoint('lg') {
-    max-width: none;
-  }
+  width: 100%;
 }

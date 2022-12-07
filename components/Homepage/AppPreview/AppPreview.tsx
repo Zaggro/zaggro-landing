@@ -6,15 +6,16 @@ interface AppPreviewProps {
   className?: string
 }
 
-// TODO: Replace with a real preview once we have design
+// TODO: Mobile app preview
 function AppPreview({ className }: AppPreviewProps) {
   return (
     <section className={clsx(styles.root, className)}>
       <SectionHeader title="ZAGGRO Protocol Preview" />
-      <div className={styles.image}>
+      <div className={styles.imageContainer}>
         <img
-          src="/images/screenshots/platform-desktop.png"
-          alt="Preview of the ZAGGRO calculator"
+          src="/images/screenshots/platform-desktop@2.png"
+          alt="Preview of the ZAGGRO application"
+          className={styles.image}
         />
       </div>
     </section>
