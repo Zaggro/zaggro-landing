@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.625rem;
+
+  @include breakpoint('lg') {
+    flex-direction: row;
+    row-gap: 1.875rem;
+    column-gap: 1.5625rem;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  @include breakpoint('lg') {
+    width: 100%;
+    max-width: 27rem;
+    flex-grow: 1;
+  }
+}
+
+.cardContent {
+  padding: 1rem 1rem 1.375rem 1rem;
+}
+
+.cardTitle {
+  color: #0096ff;
+  margin-bottom: 0.8125rem;
+}

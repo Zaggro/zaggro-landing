@@ -9,31 +9,37 @@ import styles from './CardBase.module.scss'
 
 export interface CardBaseProps {
   children: React.ReactNode
+  variant?: 'primary' | 'secondary'
   icon?: React.ReactElement
   href?: string
   target?: string
   comingSoon?: boolean
   className?: string
   contentClassName?: string
+  id?: string
 }
 
 function CardBase({
   children,
+  variant = 'primary',
   icon,
   comingSoon,
   href,
   target,
   className,
   contentClassName,
+  id,
 }: CardBaseProps) {
   const commonProps = {
     className: clsx(
       styles.root,
+      styles[variant],
       href && styles.link,
       icon && styles.withIcon,
       comingSoon && styles.withComingSoon,
       className
     ),
+    id,
   }
 
   const content = (

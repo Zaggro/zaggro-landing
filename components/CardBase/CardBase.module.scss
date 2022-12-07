@@ -19,6 +19,28 @@ $halfCircleImageSize: $circleImageSize / 2;
   border-image-slice: 1;
   background-color: rgba(56, 224, 224, 0.15);
 
+  &.secondary {
+    box-shadow: inset 0 0 3px 1px rgba(255, 255, 255, 0.2);
+    border-width: 1px;
+    border-image-source: linear-gradient(
+      142deg,
+      #72ffff 12%,
+      rgba(56, 201, 255, 0) 30%,
+      rgba(26, 174, 255, 0) 73%,
+      #0096ff 92%
+    );
+    background-color: rgba(45, 26, 81, 0.7);
+
+    .blurBorder {
+      border-image-source: linear-gradient(
+        142deg,
+        #72ffff 12%,
+        rgba(57, 202, 255, 0) 52%,
+        #0096ff 92%
+      );
+    }
+  }
+
   &.withIcon {
     margin-top: $halfCircleImageSize;
     padding-top: $halfCircleImageSize;
@@ -33,6 +55,7 @@ $halfCircleImageSize: $circleImageSize / 2;
 .blurBorder {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   -webkit-filter: blur(10px);
@@ -46,6 +69,7 @@ $halfCircleImageSize: $circleImageSize / 2;
     var(--primary-main) 89%
   );
   border-image-slice: 1;
+  z-index: -1;
 }
 
 .iconContainer {

@@ -17,7 +17,7 @@ const links = [
   },
   {
     text: 'Blog',
-    href: '/blog',
+    href: '#blog',
   },
   {
     text: 'Contact',

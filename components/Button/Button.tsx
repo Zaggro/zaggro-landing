@@ -58,7 +58,7 @@ function Button({
     </div>
   )
 
-  if (href && externalUrlRegex.test(href)) {
+  if ((href && externalUrlRegex.test(href)) || href?.includes('mailto')) {
     return (
       <a href={href} target={target} {...commonProps}>
         {content}

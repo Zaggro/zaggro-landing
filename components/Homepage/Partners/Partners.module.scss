@@ -1,0 +1,30 @@
+.partners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 0.75rem;
+  @include breakpoint('lg') {
+    gap: 1.5rem;
+  }
+}
+
+.partner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10.8125rem;
+  height: 4.9375rem;
+  padding: 0 0.7813rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @include breakpoint('lg') {
+    width: 19.875rem;
+    height: 8.75rem;
+  }
+}

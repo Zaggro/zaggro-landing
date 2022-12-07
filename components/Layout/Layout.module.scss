@@ -1,4 +1,4 @@
-.bgImage {
+.root {
   max-width: 1440px;
   margin: auto;
   position: relative;
@@ -9,7 +9,16 @@
   @include breakpoint('lg') {
     background-image: url('/images/backgrounds/desktop.png');
   }
+  // TODO: This is too slow, use background repeat instead
   // @include breakpoint('xl') {
+  //   max-width: 1920px;
   //   background-image: url('/images/backgrounds/wide-desktop.png');
   // }
+}
+
+.main {
+  padding: 0 0.5rem;
+  @include breakpoint('lg') {
+    padding: 0 1rem;
+  }
 }

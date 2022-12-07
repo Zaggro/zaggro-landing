@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  text-align: center;
+  padding: 0 1rem;
+
+  margin-bottom: 1.25rem;
+  @include breakpoint('lg') {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.text {
+  max-width: 55.625rem;
+  margin: 0 auto;
+}

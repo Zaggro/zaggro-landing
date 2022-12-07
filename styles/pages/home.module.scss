@@ -1,8 +1,17 @@
-.section {
-  height: 25rem;
+.root,
+.protocol {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  @include breakpoint('lg') {
+    gap: 6.25rem;
+  }
+}
+
+.scrollSection {
   scroll-margin-top: $mobile-sticky-nav-height;
 
-  @include breakpoint('md') {
+  @include breakpoint('lg') {
     scroll-margin-top: $desktop-sticky-nav-height;
   }
 }
