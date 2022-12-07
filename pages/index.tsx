@@ -1,7 +1,9 @@
 import clsx from 'clsx'
 import styles from 'styles/pages/home.module.scss'
+import Contact from 'components/Contact/Contact'
 import AppPreview from 'components/Homepage/AppPreview/AppPreview'
 import Audits from 'components/Homepage/Audits/Audits'
+import Blog from 'components/Homepage/Blog/Blog'
 import Calculator from 'components/Homepage/Calculator/Calculator'
 import GetInTouch from 'components/Homepage/GetInTouch/GetInTouch'
 import Hero from 'components/Homepage/Hero/Hero'
@@ -33,9 +35,8 @@ export default function Home() {
       <GetInTouch />
       <Partners />
       <Audits className={styles.section} id="audits" />
-      <section className={styles.section} id="contact">
-        Contact
-      </section>
+      <Blog className={styles.section} id="blog" />
+      <Contact className={styles.section} id="Contact" />
     </div>
   )
 }
