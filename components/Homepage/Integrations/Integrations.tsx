@@ -14,7 +14,7 @@ const integrations = [
     title: 'Metamask',
     label: 'Wallets',
     description:
-      'MetaMask is a DeFi wallet enabling user interactions and experience on Web3. It’s available as a browser extension mobile app.',
+      'MetaMask is a DeFi wallet enabling user interactions and experience on Web3. It’s available as a browser extension and as a mobile application.',
     image: '/images/integrations/metamask.png',
   },
   {
