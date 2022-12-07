@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import styles from 'styles/pages/home.module.scss'
 import Contact from 'components/Contact/Contact'
 import AppPreview from 'components/Homepage/AppPreview/AppPreview'
@@ -20,23 +19,16 @@ export default function Home() {
       <Hero />
       <Calculator />
       <AppPreview />
-      <section
-        className={clsx(styles.section, styles.protocol)}
-        id="the-protocol"
-      >
-        <Protocol />
-      </section>
+      <Protocol className={styles.scrollSection} id="the-protocol" />
       <Statistics />
-      <section className={styles.section} id="integrations">
-        <Integrations />
-      </section>
+      <Integrations className={styles.scrollSection} id="integrations" />
       <MobileApp />
-      <InstitutionalPartners id="partners" className={styles.section} />
+      <InstitutionalPartners className={styles.scrollSection} id="partners" />
       <GetInTouch />
       <Partners />
-      <Audits className={styles.section} id="audits" />
-      <Blog className={styles.section} id="blog" />
-      <Contact className={styles.section} id="Contact" />
+      <Audits className={styles.scrollSection} id="audits" />
+      <Blog className={styles.scrollSection} id="blog" />
+      <Contact className={styles.scrollSection} id="Contact" />
     </div>
   )
 }

@@ -30,7 +30,7 @@ const tokenUtils = [
 
 function MobileApp({ className }: MobileAppProps) {
   return (
-    <div className={clsx(styles.root, className)}>
+    <section className={clsx(styles.root, className)}>
       <SectionHeader
         title="ZAGGRO on Mobile"
         description="Innovational decentralized trading & crypto management application."
@@ -89,7 +89,7 @@ function MobileApp({ className }: MobileAppProps) {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 

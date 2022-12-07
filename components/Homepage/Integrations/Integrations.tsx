@@ -6,6 +6,7 @@ import styles from './Integrations.module.scss'
 
 interface IntegrationsProps {
   className?: string
+  id?: string
 }
 
 const integrations = [
@@ -24,9 +25,9 @@ const integrations = [
   },
 ]
 
-function Integrations({ className }: IntegrationsProps) {
+function Integrations({ id, className }: IntegrationsProps) {
   return (
-    <div className={clsx(styles.root, className)}>
+    <section className={clsx(styles.root, className)} id={id}>
       <SectionHeader
         title="Ecosystem Integrations"
         description="Discover some of the top DeFi apps, protocols and tools using ZAGGRO Protocol."
@@ -55,7 +56,7 @@ function Integrations({ className }: IntegrationsProps) {
           </CardBase>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

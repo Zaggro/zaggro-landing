@@ -12,6 +12,7 @@ import styles from './Protocol.module.scss'
 
 interface ProtocolProps {
   className?: string
+  id?: string
 }
 
 const features = [
@@ -47,9 +48,9 @@ const features = [
   },
 ]
 
-function Protocol({ className }: ProtocolProps) {
+function Protocol({ id, className }: ProtocolProps) {
   return (
-    <div className={clsx(styles.root, className)}>
+    <section id={id} className={clsx(styles.root, className)}>
       <SectionHeader
         title="About ZAGGRO Protocol"
         description="Our mission is to thrive DeFi participation to the next level by
@@ -74,7 +75,7 @@ function Protocol({ className }: ProtocolProps) {
           </CardBase>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -26,7 +26,7 @@ const partners = [
 
 function Partners({ className }: PartnersProps) {
   return (
-    <div className={clsx(styles.root, className)}>
+    <section className={clsx(styles.root, className)}>
       <SectionHeader
         title="Our Partners"
         description="ZAGGRO is partnered with DeFi leading business developers."
@@ -45,7 +45,7 @@ function Partners({ className }: PartnersProps) {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 

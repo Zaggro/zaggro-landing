@@ -8,7 +8,7 @@
   }
 }
 
-.section {
+.scrollSection {
   scroll-margin-top: $mobile-sticky-nav-height;
 
   @include breakpoint('lg') {
