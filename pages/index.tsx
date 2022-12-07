@@ -5,6 +5,7 @@ import Calculator from 'components/Homepage/Calculator/Calculator'
 import Hero from 'components/Homepage/Hero/Hero'
 import Integrations from 'components/Homepage/Integrations/Integrations'
 import MobileApp from 'components/Homepage/MobileApp/MobileApp'
+import Partners from 'components/Homepage/Partners/Partners'
 import Protocol from 'components/Homepage/Protocol/Protocol'
 import Statistics from 'components/Homepage/Statistics/Statistics'
 
@@ -26,7 +27,7 @@ export default function Home() {
       </section>
       <MobileApp />
       <section className={styles.section} id="partners">
-        Partners
+        <Partners />
       </section>
       <section className={styles.section} id="audits">
         Audits
