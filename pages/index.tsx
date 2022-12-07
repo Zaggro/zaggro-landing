@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import styles from 'styles/pages/home.module.scss'
 import AppPreview from 'components/Homepage/AppPreview/AppPreview'
 import Calculator from 'components/Homepage/Calculator/Calculator'
+import GetInTouch from 'components/Homepage/GetInTouch/GetInTouch'
 import Hero from 'components/Homepage/Hero/Hero'
 import InstitutionalPartners from 'components/Homepage/InstitutionalPartners/InstitutionalPartners'
 import Integrations from 'components/Homepage/Integrations/Integrations'
@@ -28,6 +29,7 @@ export default function Home() {
       </section>
       <MobileApp />
       <InstitutionalPartners id="partners" className={styles.section} />
+      <GetInTouch />
       <Partners />
       <section className={styles.section} id="audits">
         Audits
