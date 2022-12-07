@@ -9,7 +9,6 @@
 }
 
 .section {
-  min-height: 25rem;
   scroll-margin-top: $mobile-sticky-nav-height;
 
   @include breakpoint('lg') {
