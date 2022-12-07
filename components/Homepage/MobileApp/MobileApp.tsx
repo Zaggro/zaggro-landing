@@ -76,7 +76,7 @@ function MobileApp({ className }: MobileAppProps) {
             <div className={styles.utilImageContainer}>
               <img src={image} alt={title} className={styles.utilImage} />
             </div>
-            <Typography variant="h5" tag="h4" className={styles.utilTitle}>
+            <Typography variant="h5" tag="h3" className={styles.utilTitle}>
               {title}
             </Typography>
             <Typography

@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import Image from 'next/image'
 import CardBase from 'components/CardBase/CardBase'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
@@ -37,7 +36,7 @@ function Integrations({ className }: IntegrationsProps) {
           <CardBase key={title} className={styles.card}>
             <div className={styles.topContainer}>
               <div>
-                <Typography tag="h5" variant="h5">
+                <Typography tag="h5" variant="h3">
                   {title}
                 </Typography>
                 <Typography tag="p" variant="p-lg" className={styles.label}>
