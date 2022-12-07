@@ -3,6 +3,7 @@ import styles from 'styles/pages/home.module.scss'
 import AppPreview from 'components/Homepage/AppPreview/AppPreview'
 import Calculator from 'components/Homepage/Calculator/Calculator'
 import Hero from 'components/Homepage/Hero/Hero'
+import InstitutionalPartners from 'components/Homepage/InstitutionalPartners/InstitutionalPartners'
 import Integrations from 'components/Homepage/Integrations/Integrations'
 import MobileApp from 'components/Homepage/MobileApp/MobileApp'
 import Partners from 'components/Homepage/Partners/Partners'
@@ -26,9 +27,8 @@ export default function Home() {
         <Integrations />
       </section>
       <MobileApp />
-      <section className={styles.section} id="partners">
-        <Partners />
-      </section>
+      <InstitutionalPartners id="partners" className={styles.section} />
+      <Partners />
       <section className={styles.section} id="audits">
         Audits
       </section>
