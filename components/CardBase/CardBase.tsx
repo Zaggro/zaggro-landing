@@ -16,6 +16,7 @@ export interface CardBaseProps {
   comingSoon?: boolean
   className?: string
   contentClassName?: string
+  id?: string
 }
 
 function CardBase({
@@ -27,6 +28,7 @@ function CardBase({
   target,
   className,
   contentClassName,
+  id,
 }: CardBaseProps) {
   const commonProps = {
     className: clsx(
@@ -37,6 +39,7 @@ function CardBase({
       comingSoon && styles.withComingSoon,
       className
     ),
+    id,
   }
 
   const content = (
