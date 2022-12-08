@@ -37,7 +37,7 @@ function Integrations({ id, className }: IntegrationsProps) {
           <CardBase key={title} className={styles.card}>
             <div className={styles.topContainer}>
               <div>
-                <Typography tag="h5" variant="h3">
+                <Typography tag="h3" variant="h5">
                   {title}
                 </Typography>
                 <Typography tag="p" variant="p-lg" className={styles.label}>
