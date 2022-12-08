@@ -1,14 +1,19 @@
 .root {
   width: 100%;
   z-index: 10;
-  position: sticky;
+  position: fixed;
   top: 0;
-
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+  @include transition(top 0.5s ease-in-out);
+
   &.open {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+  }
+
+  &:not(.open).hide {
+    top: -100%;
   }
 }
 
@@ -20,7 +25,7 @@
   justify-content: space-between;
   z-index: 2;
 
-  img {
+  .logo {
     z-index: 3;
   }
 

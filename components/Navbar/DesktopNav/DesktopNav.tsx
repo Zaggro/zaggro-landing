@@ -1,6 +1,7 @@
 import useNavbar from '../useNavbar'
 import clsx from 'clsx'
 import Image from 'next/image'
+import Link from 'next/link'
 import Button from 'components/Button/Button'
 import Typography from 'components/Typography/Typography'
 import useViewportSize from 'hooks/useViewportSize'
@@ -28,17 +29,19 @@ function DesktopNav({ className }: DesktopNavProps) {
           scrollIsMoreThanHeader && styles.slim
         )}
       >
-        <Image
-          src={
-            showSmallLogo
-              ? '/images/logo/zaggro-no-text@2.png'
-              : '/images/logo/zaggro@2.png'
-          }
-          alt="ZAGGRO logo"
-          width={300}
-          height={82}
-          className={showSmallLogo ? styles.noTextLogo : styles.logo}
-        />
+        <Link href="/">
+          <Image
+            src={
+              showSmallLogo
+                ? '/images/logo/zaggro-no-text@2.png'
+                : '/images/logo/zaggro@2.png'
+            }
+            alt="ZAGGRO logo"
+            width={300}
+            height={82}
+            className={showSmallLogo ? styles.noTextLogo : styles.logo}
+          />
+        </Link>
         <ul className={styles.links}>
           {headerLinks.map((link) => (
             <li key={link.href}>
