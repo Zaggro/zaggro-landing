@@ -16,7 +16,7 @@ function AppPreview({ className }: AppPreviewProps) {
       <div className={styles.imageContainer}>
         {isPhablet ? (
           <img
-            src="/images/screenshots/platform-desktop@2.png"
+            src="/images/screenshots/swap-desktop@2.png"
             alt="Preview of the ZAGGRO application"
             className={styles.image}
           />
