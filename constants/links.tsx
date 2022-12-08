@@ -35,7 +35,7 @@ export const socialLinks = [
 export const headerLinks = [
   {
     text: 'The protocol',
-    href: '#the-protocol',
+    href: '#protocol',
   },
   {
     text: 'Integrations',
@@ -63,7 +63,7 @@ export const footerLinks = [
   [
     {
       text: 'ZAGGRO Protocol',
-      url: '#the-protocol',
+      url: '#protocol',
     },
     {
       text: 'Integrations',

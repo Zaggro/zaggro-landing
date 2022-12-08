@@ -19,7 +19,7 @@ export default function Home() {
       <Hero />
       <Calculator />
       <AppPreview />
-      <Protocol className={styles.scrollSection} id="the-protocol" />
+      <Protocol className={styles.scrollSection} id="protocol" />
       <Statistics />
       <Integrations className={styles.scrollSection} id="integrations" />
       <MobileApp />
@@ -28,7 +28,7 @@ export default function Home() {
       <Partners />
       <Audits className={styles.scrollSection} id="audits" />
       <Blog className={styles.scrollSection} id="blog" />
-      <Contact className={styles.scrollSection} id="Contact" />
+      <Contact className={styles.scrollSection} id="contact" />
     </div>
   )
 }

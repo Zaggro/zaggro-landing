@@ -21,8 +21,10 @@ function Hero({ className }: HeroProps) {
         APIs
       </Typography>
       <div className={styles.buttons}>
-        <Button className={styles.button}>Build with us</Button>
-        <Button variant="secondary" className={styles.button}>
+        <Button className={styles.button} href="#contact">
+          Build with us
+        </Button>
+        <Button variant="secondary" className={styles.button} href="#protocol">
           Explore the protocol
         </Button>
       </div>
