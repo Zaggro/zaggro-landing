@@ -79,7 +79,7 @@ export const footerLinks = [
     },
     {
       text: 'Media kit',
-      url: '',
+      url: 'https://drive.google.com/drive/u/1/folders/1COnKNre2qdNug6Z3iDQmQI8uWWyerTrk',
     },
     {
       text: 'Contact',
