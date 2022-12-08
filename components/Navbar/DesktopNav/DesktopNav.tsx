@@ -32,17 +32,21 @@ function DesktopNav({ className }: DesktopNavProps) {
     >
       <div className={styles.container}>
         <Link href="/">
-          <Image
-            src={
-              showSmallLogo
-                ? '/images/logo/zaggro-no-text@2.png'
-                : '/images/logo/zaggro@2.png'
-            }
-            alt="ZAGGRO logo"
-            width={300}
-            height={82}
-            className={showSmallLogo ? styles.noTextLogo : styles.logo}
-          />
+          {showSmallLogo ? (
+            <Image
+              src="/images/logo/zaggro-no-text@2.png"
+              alt="ZAGGRO logo"
+              width={50}
+              height={50}
+            />
+          ) : (
+            <Image
+              src="/images/logo/zaggro@2.png"
+              alt="ZAGGRO logo"
+              width={228}
+              height={62}
+            />
+          )}
         </Link>
         <ul className={styles.links}>
           {headerLinks.map((link) => (
