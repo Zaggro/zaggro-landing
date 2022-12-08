@@ -4,10 +4,6 @@
   align-items: center;
   text-align: center;
   gap: 1.25rem;
-  margin-top: 3.75rem;
-  @include breakpoint('lg') {
-    margin-top: 8.125rem;
-  }
 }
 
 .highlighted {

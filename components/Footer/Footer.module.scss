@@ -1,0 +1,99 @@
+.root {
+  max-width: 90rem;
+  margin: auto;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.875rem;
+  padding: 0 1.5rem;
+  margin-bottom: 1.875rem;
+  @include breakpoint('lg') {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 3rem;
+    margin-bottom: 2.875rem;
+  }
+}
+
+.zaggroContainer {
+  @include breakpoint('lg') {
+    margin-right: 10.3%;
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 15.125rem;
+  width: 100%;
+  margin-bottom: 1.875rem;
+}
+
+.text {
+  width: 19.75rem;
+  margin-bottom: 0.625rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.9375rem;
+}
+
+.socialIcon {
+  fill: white;
+  @include transition(fill);
+  &:hover {
+    fill: #72ffff;
+  }
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.875rem;
+  font-family: DMSans;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  line-height: 1.73;
+  color: white;
+  a {
+    @include transition(color);
+    &:hover {
+      color: #72ffff;
+    }
+  }
+
+  @include breakpoint('lg') {
+    margin-top: 1rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.linkSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom {
+  padding: 0 0.5rem 0 0.5rem;
+  @include breakpoint('lg') {
+    padding: 0 3rem 0 3rem;
+  }
+}
+
+.copyright {
+  font-family: DMSans;
+  font-size: 0.8125rem;
+  line-height: 1.31;
+  color: var(--gray-lightest);
+  border-top: 1px solid var(--gray-lighter);
+
+  padding: 1.875rem 0 4.1875rem 0;
+  @include breakpoint('lg') {
+    padding: 1.875rem 0 2.5rem 0;
+  }
+}
