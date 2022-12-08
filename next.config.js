@@ -14,6 +14,9 @@ const nextConfig = {
     disableServerWebpackPlugin: true,
     disableClientWebpackPlugin: true,
   },
+  output: {
+    standalone: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
