@@ -1,0 +1,99 @@
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      zagenv:
+        description: 'Environment (staging / production)'
+        required: true
+        default: 'production'
+      tag:
+        description: 'Docker tag (defaults to main)'
+        required: false
+
+env:
+  DOCKER_PKG: ghcr.io/zaggro/zaggro-landing/web
+  DEPLOYMENT_NAME: zaggro-landing
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: Validate selected tag
+        run: |
+          if [ "${{ github.event.inputs.tag }}" = "" ]; then
+            echo "TAG=$(echo $GITHUB_SHA | head -c7)" >> $GITHUB_ENV
+          else
+            echo "TAG=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Checkout specified tag
+        run: git checkout ${{ env.TAG }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ env.DOCKER_PKG }}:${{ github.event.inputs.zagenv }}-${{ env.TAG }},${{ env.DOCKER_PKG }}:${{ github.event.inputs.zagenv }}-latest
+          cache-from: type=registry,ref=${{ env.DOCKER_PKG}}:${{ github.event.inputs.zagenv }}-latest
+          cache-to: type=inline
+          secrets: |
+            github_token=${{ secrets.GITHUB_TOKEN }}
+            zagenv=${{ github.event.inputs.zagenv }}
+
+      - name: Trigger deployment to dev cluster
+        uses: peter-evans/repository-dispatch@v1
+        if: github.event.inputs.zagenv == 'staging'
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
+          repository: actafi/kubernetes-dev
+          event-type: Deploy service
+          client-payload: >-
+            {
+              "deployment_name": "${{ env.DEPLOYMENT_NAME }}",
+              "github_repository": "${{ github.repository }}",
+              "acta_env": "${{ github.event.inputs.zagenv }}",
+              "docker_pkg": "${{ env.DOCKER_PKG }}",
+              "tag": "${{ env.TAG }}",
+              "actor": "${{ github.actor }}",
+              "namespace": "adafi"
+            }
+
+      - name: Trigger deployment to prod cluster
+        uses: peter-evans/repository-dispatch@v1
+        if: github.event.inputs.zagenv == 'production'
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
+          repository: actafi/kubernetes-prod
+          event-type: Deploy service
+          client-payload: >-
+            {
+              "deployment_name": "${{ env.DEPLOYMENT_NAME }}",
+              "github_repository": "${{ github.repository }}",
+              "acta_env": "${{ github.event.inputs.zagenv }}",
+              "docker_pkg": "${{ env.DOCKER_PKG }}",
+              "tag": "${{ env.TAG }}",
+              "actor": "${{ github.actor }}",
+              "namespace": "actafi"
+            }
