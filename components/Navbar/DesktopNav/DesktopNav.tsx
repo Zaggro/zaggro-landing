@@ -22,13 +22,15 @@ function DesktopNav({ className }: DesktopNavProps) {
   const hideNavbar = !showNav && scrollIsMoreThanHeader
 
   return (
-    <nav className={clsx(styles.root, hideNavbar && styles.hide, className)}>
-      <div
-        className={clsx(
-          styles.container,
-          scrollIsMoreThanHeader && styles.slim
-        )}
-      >
+    <nav
+      className={clsx(
+        styles.root,
+        hideNavbar && styles.hide,
+        scrollIsMoreThanHeader && styles.slim,
+        className
+      )}
+    >
+      <div className={styles.container}>
         <Link href="/">
           <Image
             src={
