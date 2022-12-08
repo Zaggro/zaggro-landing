@@ -89,5 +89,5 @@ jobs:
               "docker_pkg": "${{ env.DOCKER_PKG }}",
               "tag": "${{ env.TAG }}",
               "actor": "${{ github.actor }}",
-              "namespace": "adafi"
+              "namespace": "web"
             }
