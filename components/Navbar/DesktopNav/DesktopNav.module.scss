@@ -7,14 +7,18 @@
 .root {
   position: sticky;
   top: 0;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: $desktop-sticky-nav-height;
   padding: 0 3rem;
-  z-index: 10;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
 
   @include headerMediaQuery {
     justify-content: initial;
@@ -22,20 +26,22 @@
 }
 
 .logo {
-  width: 12.5rem;
-  height: auto;
-  @include headerMediaQuery {
-    width: 14.25rem;
-    height: initial;
-  }
+  width: 14.25rem;
+  height: initial;
+}
+
+.noTextLogo {
+  width: 3.125rem;
+  height: 3.125rem;
 }
 
 .links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   gap: 2.1875rem;
-  @include headerMediaQuery {
-    margin-left: 5.875rem;
-  }
 }
 
 .link {
