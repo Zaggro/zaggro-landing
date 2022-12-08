@@ -4,7 +4,8 @@
 @import './colors';
 
 html {
-  scroll-behavior: smooth;
+  // Needed !important to make the scroll-behavior work with next/link component
+  scroll-behavior: smooth !important;
 }
 
 body {
