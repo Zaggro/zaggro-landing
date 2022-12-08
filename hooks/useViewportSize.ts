@@ -1,5 +1,5 @@
-import { BREAKPOINTS } from 'constants/breakpoints'
 import useWindowDimensions from './useWindowDimensions'
+import { BREAKPOINTS } from 'constants/breakpoints'
 
 const useViewportSize = (breakpoint?: number) => {
   const { width } = useWindowDimensions()
@@ -14,7 +14,15 @@ const useViewportSize = (breakpoint?: number) => {
     }
   }
 
-  return {}
+  // There is no window object in server side, so we need to decide which layout mobile/desktop we show on the very first render.
+  // Went with versions bigger than mobile for now. Can be changed later once we have analytics and see which devices users are using.
+  return {
+    isMobile: false,
+    isPhablet: true,
+    isTablet: true,
+    isDesktop: true,
+    isSpecialBreakpoint: true,
+  }
 }
 
 export default useViewportSize
