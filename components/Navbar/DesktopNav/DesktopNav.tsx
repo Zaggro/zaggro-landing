@@ -1,8 +1,8 @@
-import links from '../links'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Button from 'components/Button/Button'
 import Typography from 'components/Typography/Typography'
+import { headerLinks } from 'constants/links'
 import styles from './DesktopNav.module.scss'
 
 interface DesktopNavProps {
@@ -22,7 +22,7 @@ function DesktopNav({ className }: DesktopNavProps) {
         className={styles.logo}
       />
       <ul className={styles.links}>
-        {links.map((link) => (
+        {headerLinks.map((link) => (
           <li key={link.href}>
             <a href={link.href}>
               <Typography variant="menu-md" className={styles.link}>

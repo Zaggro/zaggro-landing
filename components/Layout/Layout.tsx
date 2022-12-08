@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import Footer from 'components/Footer/Footer'
 import Navbar from 'components/Navbar/Navbar'
 import styles from './Layout.module.scss'
 
@@ -10,9 +11,9 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.root}>
-      <Navbar className={styles.header} />
+      <Navbar />
       <main className={styles.main}>{children}</main>
-      <footer className={styles.footer} />
+      <Footer />
     </div>
   )
 }

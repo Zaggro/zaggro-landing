@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Button from 'components/Button/Button'
 import Typography from 'components/Typography/Typography'
+import { headerLinks } from 'constants/links'
 import styles from './MobileNav.module.scss'
 
 interface MobileNavProps {
@@ -46,7 +47,7 @@ function MobileNav({ className }: MobileNavProps) {
       {open && (
         <>
           <ul className={styles.links}>
-            {links.map((link) => (
+            {headerLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} onClick={() => setOpen(false)}>
                   <Typography variant="menu-md">{link.text}</Typography>

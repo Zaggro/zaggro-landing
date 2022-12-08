@@ -17,8 +17,8 @@
 }
 
 .main {
-  padding: 0 0.5rem;
+  padding: 60px 8px 50px 8px;
   @include breakpoint('lg') {
-    padding: 0 1rem;
+    padding: 130px 16px 100px 16px;
   }
 }
