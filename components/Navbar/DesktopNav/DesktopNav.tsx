@@ -1,3 +1,4 @@
+import useNavbar from '../useNavbar'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Button from 'components/Button/Button'
@@ -10,24 +11,33 @@ interface DesktopNavProps {
   className?: string
 }
 
-// TODO: Active style based on which element is in view
-// TODO: on scroll down, hide navbar | on scroll up, show navbar
 function DesktopNav({ className }: DesktopNavProps) {
   const { isSpecialBreakpoint } = useViewportSize(1275)
 
+  const { showNav, lastScrollY } = useNavbar()
+  const headerDefaultHeight = 122
+  const scrollIsMoreThanHeader = lastScrollY > headerDefaultHeight
+  const showSmallLogo = isSpecialBreakpoint || scrollIsMoreThanHeader
+  const hideNavbar = !showNav && scrollIsMoreThanHeader
+
   return (
-    <nav className={clsx(styles.root, className)}>
-      <div className={styles.container}>
+    <nav className={clsx(styles.root, hideNavbar && styles.hide, className)}>
+      <div
+        className={clsx(
+          styles.container,
+          scrollIsMoreThanHeader && styles.slim
+        )}
+      >
         <Image
           src={
-            !isSpecialBreakpoint
-              ? '/images/logo/zaggro@2.png'
-              : '/images/logo/zaggro-no-text@2.png'
+            showSmallLogo
+              ? '/images/logo/zaggro-no-text@2.png'
+              : '/images/logo/zaggro@2.png'
           }
           alt="ZAGGRO logo"
           width={300}
           height={82}
-          className={!isSpecialBreakpoint ? styles.logo : styles.noTextLogo}
+          className={showSmallLogo ? styles.noTextLogo : styles.logo}
         />
         <ul className={styles.links}>
           {headerLinks.map((link) => (
