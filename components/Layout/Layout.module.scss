@@ -1,6 +1,4 @@
 .root {
-  max-width: 1440px;
-  margin: auto;
   position: relative;
   background-image: url('/images/backgrounds/mobile.png');
   background-repeat: no-repeat;
@@ -9,14 +7,11 @@
   @include breakpoint('lg') {
     background-image: url('/images/backgrounds/desktop.png');
   }
-  // TODO: This is too slow, use background repeat instead
-  // @include breakpoint('xl') {
-  //   max-width: 1920px;
-  //   background-image: url('/images/backgrounds/wide-desktop.png');
-  // }
 }
 
 .main {
+  max-width: 90rem;
+  margin: auto;
   padding: 8.75rem 0.5rem 3.125rem 0.5rem;
   @include breakpoint('lg') {
     padding: 15.75rem 1rem 6.25rem 1rem;

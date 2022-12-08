@@ -7,7 +7,6 @@ interface LayoutProps {
   children: ReactNode
 }
 
-// TODO: background image for wide desktop
 function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.root}>
