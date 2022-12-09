@@ -18,13 +18,13 @@ function AppPreview({ className }: AppPreviewProps) {
           <img
             src="/images/screenshots/swap-desktop@2.png"
             alt="Preview of the ZAGGRO application"
-            className={styles.image}
+            className={styles.imageDesktop}
           />
         ) : (
           <img
-            src="/images/screenshots/platform-mobile@2.png"
+            src="/images/screenshots/swap-mobile@2.png"
             alt="Preview of the ZAGGRO application"
-            className={styles.image}
+            className={styles.imageMobile}
           />
         )}
       </div>

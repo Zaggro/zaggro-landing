@@ -3,7 +3,12 @@
   justify-content: center;
 }
 
-.image {
+.imageMobile {
+  max-width: 22.375rem;
+  width: 100%;
+}
+
+.imageDesktop {
   max-width: 69.75rem;
   width: 100%;
 }
