@@ -30,4 +30,7 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
 }
 
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
+// ! Sentry is breaking storybook, investigate and fix
+// module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
+
+module.exports = nextConfig
