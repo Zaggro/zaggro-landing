@@ -12,7 +12,7 @@ function Layout({ children }: LayoutProps) {
     <div className={styles.root}>
       <Navbar />
       <main className={styles.main}>{children}</main>
-      <Footer />
+      <Footer className={styles.footer} />
     </div>
   )
 }

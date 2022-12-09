@@ -1,6 +1,6 @@
 .root {
   max-width: 90rem;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .top {
@@ -62,7 +62,7 @@
   a {
     @include transition(color);
     &:hover {
-      color: #72ffff;
+      color: #0096ff;
     }
   }
 
@@ -70,6 +70,7 @@
     margin-top: 1rem;
     justify-content: space-between;
     width: 100%;
+    max-width: 47.5rem;
   }
 }
 
