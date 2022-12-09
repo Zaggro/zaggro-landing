@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import Adornment from 'components/Adornment/Adornment'
-import Button from 'components/Button/Button'
 import CardBase from 'components/CardBase/CardBase'
 import Typography from 'components/Typography/Typography'
 import styles from './ArticlePreview.module.scss'
