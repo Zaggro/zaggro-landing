@@ -4,6 +4,7 @@ import type { NextPage, GetStaticProps } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
 import ArticlePreview from 'components/ArticlePreview/ArticlePreview'
+import Typography from 'components/Typography/Typography'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = await getAllArticles()
@@ -71,7 +72,11 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
           content="News and Articles from ZAGGRO"
         />
       </Head>
-      {articleLinks}
+      <div style={{ height: '50vh', textAlign: 'center' }}>
+        <Typography variant="display-md" tag="h1">
+          Blog articles coming soon!
+        </Typography>
+      </div>
     </>
   )
 }
