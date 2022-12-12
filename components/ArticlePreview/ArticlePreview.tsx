@@ -25,26 +25,25 @@ function ArticlePreview({
   className,
 }: ArticlePreviewProps) {
   return (
-    <Link href={articleUrl}>
-      <CardBase
-        className={clsx(styles.root, className)}
-        contentClassName={styles.content}
-      >
-        <div className={styles.imageWrapper}>
-          <img src={imageUrl} alt="" className={styles.image} />
-          <Adornment className={styles.category}>{category}</Adornment>
+    <CardBase
+      className={clsx(styles.root, className)}
+      contentClassName={styles.content}
+      href={articleUrl}
+    >
+      <div className={styles.imageWrapper}>
+        <img src={imageUrl} alt="" className={styles.image} />
+        <Adornment className={styles.category}>{category}</Adornment>
+      </div>
+      <div className={styles.textContent}>
+        <Typography tag="h3" variant="h5">
+          {title}
+        </Typography>
+        <div className={styles.bottomDetails}>
+          <div className={styles.detailsText}>{dateCreated}</div>
+          <div className={styles.detailsText}>{readLength}</div>
         </div>
-        <div className={styles.textContent}>
-          <Typography tag="h3" variant="h5">
-            {title}
-          </Typography>
-          <div className={styles.bottomDetails}>
-            <div className={styles.detailsText}>{dateCreated}</div>
-            <div className={styles.detailsText}>{readLength}</div>
-          </div>
-        </div>
-      </CardBase>
-    </Link>
+      </div>
+    </CardBase>
   )
 }
 
