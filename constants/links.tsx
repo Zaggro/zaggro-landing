@@ -1,8 +1,14 @@
+import CopyLink from 'public/svgs/social/copy-link.svg'
 import Discord from 'public/svgs/social/discord.svg'
+import Facebook from 'public/svgs/social/facebook.svg'
 import Github from 'public/svgs/social/github.svg'
+// import LinkedIn2 from 'public/svgs/social/linkedin2.svg'
 import LinkedIn from 'public/svgs/social/linkedin.svg'
+import Mail from 'public/svgs/social/mail.svg'
 import Telegram from 'public/svgs/social/telegram.svg'
+import Twitter2 from 'public/svgs/social/twitter2.svg'
 import Twitter from 'public/svgs/social/twitter.svg'
+import WhatsApp from 'public/svgs/social/whatsapp.svg'
 
 export const socialLinks = [
   {
@@ -29,6 +35,33 @@ export const socialLinks = [
     url: '',
     name: 'LinkedIn',
     icon: <LinkedIn />,
+  },
+]
+
+export const shareButtons = [
+  {
+    icon: <Twitter2 />,
+    href: 'https://twitter.com/intent/tweet?url=',
+  },
+  {
+    icon: <Facebook />,
+    href: 'https://www.facebook.com/sharer/sharer.php?u=',
+  },
+  {
+    icon: <LinkedIn />,
+    href: 'https://www.linkedin.com/shareArticle?mini=true&url=',
+  },
+  {
+    icon: <WhatsApp />,
+    href: 'https://wa.me/?text=',
+  },
+  {
+    icon: <Mail />,
+    href: 'mailto:?subject=&body=',
+  },
+  {
+    icon: <CopyLink />,
+    onClick: () => navigator.clipboard.writeText(window.location.href),
   },
 ]
 
