@@ -1,0 +1,18 @@
+.tabs {
+  margin-bottom: 2.5rem;
+  @include breakpoint('md') {
+    margin-bottom: 3.125rem;
+  }
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-bottom: 6.25rem;
+  @include breakpoint('md') {
+    gap: 1.5rem;
+    margin-bottom: 10.375rem;
+  }
+}

@@ -3,8 +3,10 @@ import { Article, getAllArticles } from 'lib/firebase/articles'
 import type { NextPage, GetStaticProps } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
+import styles from 'styles/pages/blog.module.scss'
 import ArticlePreview from 'components/ArticlePreview/ArticlePreview'
-import Typography from 'components/Typography/Typography'
+import Contact from 'components/Contact/Contact'
+import Tabs from 'components/Tabs/Tabs'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = await getAllArticles()
@@ -72,11 +74,14 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
           content="News and Articles from ZAGGRO"
         />
       </Head>
-      <div style={{ height: '50vh', textAlign: 'center' }}>
-        <Typography variant="display-md" tag="h1">
-          Blog articles coming soon!
-        </Typography>
-      </div>
+      <Tabs
+        variation="secondary"
+        items={categories}
+        onChange={handleTabChange}
+        className={styles.tabs}
+      />
+      <div className={styles.articles}>{articleLinks}</div>
+      <Contact />
     </>
   )
 }
