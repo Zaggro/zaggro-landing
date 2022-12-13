@@ -29,7 +29,7 @@
   color: var(--gray-lightest);
 }
 
-.image {
+.svg {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,4 +37,5 @@
   width: 4.375rem;
   height: 4.375rem;
   background-color: var(--white);
+  padding: 8px;
 }

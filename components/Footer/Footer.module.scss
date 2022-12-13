@@ -77,6 +77,13 @@
 .linkSection {
   display: flex;
   flex-direction: column;
+
+  .link {
+    &.disabled {
+      pointer-events: none;
+      color: #614b89;
+    }
+  }
 }
 
 .bottom {
