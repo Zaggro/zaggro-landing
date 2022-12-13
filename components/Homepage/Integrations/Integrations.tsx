@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import CardBase from 'components/CardBase/CardBase'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
+import sui from 'public/svgs/integrations/sui.svg'
 import styles from './Integrations.module.scss'
 
 interface IntegrationsProps {
@@ -11,11 +12,11 @@ interface IntegrationsProps {
 
 const integrations = [
   {
-    title: 'Metamask',
+    title: 'Sui Wallet',
     label: 'Wallets',
     description:
-      'MetaMask is a DeFi wallet enabling user interactions and experience on Web3. It’s available as a browser extension and as a mobile application.',
-    image: '/images/integrations/metamask.png',
+      'Open-sourced Sui Wallet gives Sui users the ability to create an address, view and manage assets on the Sui network, and interact with dApps. The Sui Wallet serves as a reference implementation for other potential wallets and applications in the Sui ecosystem.',
+    svg: sui,
   },
   {
     title: 'More partners',
@@ -33,7 +34,7 @@ function Integrations({ id, className }: IntegrationsProps) {
         description="Discover some of the top DeFi apps, protocols and tools using ZAGGRO Protocol."
       />
       <div className={styles.cards}>
-        {integrations.map(({ title, label, description, image }) => (
+        {integrations.map(({ title, label, description, svg: Svg }) => (
           <CardBase key={title} className={styles.card}>
             <div className={styles.topContainer}>
               <div>
@@ -44,9 +45,9 @@ function Integrations({ id, className }: IntegrationsProps) {
                   {label}
                 </Typography>
               </div>
-              {image && (
-                <div className={styles.image}>
-                  <img src={image} alt="" />
+              {Svg && (
+                <div className={styles.svg}>
+                  <Svg />
                 </div>
               )}
             </div>
