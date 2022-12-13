@@ -63,19 +63,19 @@ export const shareButtons = [
 export const headerLinks = [
   {
     text: 'The protocol',
-    href: '#protocol',
+    href: '/#protocol',
   },
   {
     text: 'Integrations',
-    href: '#integrations',
+    href: '/#integrations',
   },
   {
     text: 'Partners',
-    href: '#partners',
+    href: '/#partners',
   },
   {
     text: 'Audits',
-    href: '#audits',
+    href: '/#audits',
   },
   {
     text: 'Blog',
@@ -83,7 +83,7 @@ export const headerLinks = [
   },
   {
     text: 'Contact',
-    href: '#contact',
+    href: '/#contact',
   },
 ]
 
@@ -91,15 +91,15 @@ export const footerLinks = [
   [
     {
       text: 'ZAGGRO Protocol',
-      url: '#protocol',
+      url: '/#protocol',
     },
     {
       text: 'Integrations',
-      url: '#integrations',
+      url: '/#integrations',
     },
     {
       text: 'Partners',
-      url: '#partners',
+      url: '/#partners',
     },
     {
       text: 'Blog',
@@ -111,7 +111,7 @@ export const footerLinks = [
     },
     {
       text: 'Contact',
-      url: '#contact',
+      url: '/#contact',
     },
   ],
   [
