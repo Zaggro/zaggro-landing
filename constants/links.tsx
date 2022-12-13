@@ -1,7 +1,7 @@
 import Discord from 'public/svgs/social/discord.svg'
 import Facebook from 'public/svgs/social/facebook.svg'
 import Github from 'public/svgs/social/github.svg'
-import LinkedIn2 from 'public/svgs/social/linkedin2.svg'
+import LinkedIn2 from 'public/svgs/social/linkedIn2.svg'
 import LinkedIn from 'public/svgs/social/linkedin.svg'
 import Mail from 'public/svgs/social/mail.svg'
 import Telegram from 'public/svgs/social/telegram.svg'
@@ -79,7 +79,7 @@ export const headerLinks = [
   },
   {
     text: 'Blog',
-    href: '#blog',
+    href: '/blog',
   },
   {
     text: 'Contact',
@@ -103,7 +103,7 @@ export const footerLinks = [
     },
     {
       text: 'Blog',
-      url: '#blog',
+      url: '/blog',
     },
     {
       text: 'Media kit',

@@ -2,10 +2,14 @@ import {
   getArticle,
   getAllArticleSlugs,
   Article as ArticleProps,
+  getAllArticles,
 } from 'lib/firebase/articles'
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
+import styles from 'styles/pages/article.module.scss'
 import Article from 'components/Article/Article'
+import BlogSection from 'components/BlogSection/BlogSection'
+import Contact from 'components/Contact/Contact'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getAllArticleSlugs()
@@ -17,18 +21,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const articleData = await getArticle(params?.article as string)
+  const articles = await getAllArticles()
   return {
     props: {
       articleData,
+      articles,
     },
   }
 }
 
 interface ArticlePageProps {
+  articles: ArticleProps[]
   articleData: ArticleProps
 }
 
-const ArticlePage: NextPage<ArticlePageProps> = ({ articleData }) => {
+const ArticlePage: NextPage<ArticlePageProps> = ({ articles, articleData }) => {
+  const articlesExceptCurrent = articles.filter(
+    ({ slug }) => slug !== articleData.slug
+  )
+
   return (
     <>
       <Head>
@@ -51,6 +62,15 @@ const ArticlePage: NextPage<ArticlePageProps> = ({ articleData }) => {
         />
       </Head>
       <Article {...articleData} />
+      {articlesExceptCurrent && articlesExceptCurrent.length > 0 && (
+        <div className={styles.moreArticles}>
+          <BlogSection
+            title="Recent updates from ZAGGRO"
+            articles={articlesExceptCurrent?.slice(0, 3)}
+          />
+        </div>
+      )}
+      <Contact />
     </>
   )
 }
