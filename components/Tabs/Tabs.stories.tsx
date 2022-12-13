@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/react/types-6-0'
-
 import Tabs, { TabProps } from './Tabs'
+import { Meta, Story } from '@storybook/react/types-6-0'
 
 export default {
   title: 'Components/Tabs',
@@ -23,5 +22,5 @@ Primary.args = {
 export const Secondary = Template.bind({})
 Secondary.args = {
   variation: 'secondary',
-  items: ['All', 'Partnerships', 'Development Update', 'ActaFi Ecosystem'],
+  items: ['All', 'Partnerships', 'Development Update', 'ZAGGRO Ecosystem'],
 }
