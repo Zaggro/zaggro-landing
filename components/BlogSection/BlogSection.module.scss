@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 84.75rem;
+  margin: auto;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-bottom: 2.5rem;
+  @include breakpoint('lg') {
+    gap: 1.5rem;
+    margin-bottom: 1.875rem;
+  }
+}
