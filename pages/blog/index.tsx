@@ -43,7 +43,7 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
   }
 
   const articleLinks = shownArticles.map(
-    ({ title, category, date, slug, imageUrl }) => {
+    ({ title, category, date, slug, imageUrl, readLength }) => {
       return (
         <ArticlePreview
           imageUrl={imageUrl}
@@ -52,7 +52,7 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
           title={title}
           category={category}
           key={title + category}
-          readLength={5}
+          readLength={readLength}
         />
       )
     }
