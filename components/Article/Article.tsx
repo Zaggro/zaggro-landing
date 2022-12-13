@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import Blocks from 'editorjs-blocks-react-renderer'
 import { cloneElement } from 'react'
 import Adornment from 'components/Adornment/Adornment'
@@ -16,9 +17,13 @@ export interface ArticleProps {
   readLength?: string
 }
 
-const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className={styles.container}>{children}</div>
-)
+const Container = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) => <div className={clsx(styles.container, className)}>{children}</div>
 
 // TODO: Share buttons
 const Article = ({
@@ -61,7 +66,7 @@ const Article = ({
                 if (onClick) {
                   return (
                     <button
-                      key={href}
+                      key={`${href}${articleUrl}`}
                       className={styles.shareButton}
                       onClick={onClick}
                     >
@@ -89,24 +94,8 @@ const Article = ({
       <div className={styles.imageContainer}>
         <img src={imageUrl} alt={title} className={styles.image} />
       </div>
-      <Container>
-        <Blocks
-          data={JSON.parse(content)}
-          config={{
-            paragraph: {
-              className: styles.paragraph,
-            },
-            list: {
-              className: styles.list,
-            },
-            header: {
-              className: styles.subTitle,
-            },
-            table: {
-              className: styles.table,
-            },
-          }}
-        />
+      <Container className={styles.editorJsContent}>
+        <Blocks data={JSON.parse(content)} />
       </Container>
     </div>
   )
