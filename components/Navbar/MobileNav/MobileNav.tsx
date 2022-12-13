@@ -52,7 +52,9 @@ function MobileNav({ className }: MobileNavProps) {
           />
         </Link>
         <div className={styles.buttons}>
-          <Button href="#">Launch App</Button>
+          <Button href="#" disabled>
+            Launch App
+          </Button>
           <button className={styles.menuBtn} onClick={() => setOpen(!open)}>
             <div className={clsx(styles.hamburger, open && styles.cross)} />
             <div className={styles.blurBorder} />

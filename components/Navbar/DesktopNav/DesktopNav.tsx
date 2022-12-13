@@ -59,7 +59,7 @@ function DesktopNav({ className }: DesktopNavProps) {
             </li>
           ))}
         </ul>
-        <Button href="#" className={styles.button}>
+        <Button href="#" disabled className={styles.button}>
           Launch App
         </Button>
       </div>
