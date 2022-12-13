@@ -26,6 +26,23 @@
   }
 }
 
+.link {
+  display: flex;
+}
+
+.logo {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.logoWithText {
+  width: 10.0625rem;
+  height: auto;
+  @include headerMediaQuery {
+    width: 14.25rem;
+  }
+}
+
 .container {
   max-width: 90rem;
   margin: auto;

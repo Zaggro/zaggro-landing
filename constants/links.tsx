@@ -1,8 +1,13 @@
 import Discord from 'public/svgs/social/discord.svg'
+import Facebook from 'public/svgs/social/facebook.svg'
 import Github from 'public/svgs/social/github.svg'
+import LinkedIn2 from 'public/svgs/social/linkedIn2.svg'
 import LinkedIn from 'public/svgs/social/linkedin.svg'
+import Mail from 'public/svgs/social/mail.svg'
 import Telegram from 'public/svgs/social/telegram.svg'
+import Twitter2 from 'public/svgs/social/twitter2.svg'
 import Twitter from 'public/svgs/social/twitter.svg'
+import WhatsApp from 'public/svgs/social/whatsapp.svg'
 
 export const socialLinks = [
   {
@@ -32,30 +37,53 @@ export const socialLinks = [
   },
 ]
 
+export const shareButtons = [
+  {
+    icon: <Twitter2 />,
+    href: 'https://twitter.com/intent/tweet?url=',
+  },
+  {
+    icon: <Facebook />,
+    href: 'https://www.facebook.com/sharer/sharer.php?u=',
+  },
+  {
+    icon: <LinkedIn2 />,
+    href: 'https://www.linkedin.com/shareArticle?mini=true&url=',
+  },
+  {
+    icon: <WhatsApp />,
+    href: 'https://wa.me/?text=',
+  },
+  {
+    icon: <Mail />,
+    href: 'mailto:?subject=&body=',
+  },
+]
+
 export const headerLinks = [
   {
     text: 'The protocol',
-    href: '#protocol',
+    href: '/#protocol',
   },
   {
     text: 'Integrations',
-    href: '#integrations',
+    href: '/#integrations',
   },
   {
     text: 'Partners',
-    href: '#partners',
+    href: '/#partners',
   },
   {
     text: 'Audits',
-    href: '#audits',
+    href: '/#audits',
   },
   {
     text: 'Blog',
-    href: '#blog',
+    href: '/blog',
   },
   {
     text: 'Contact',
-    href: '#contact',
+    href: '/#contact',
   },
 ]
 
@@ -63,19 +91,19 @@ export const footerLinks = [
   [
     {
       text: 'ZAGGRO Protocol',
-      url: '#protocol',
+      url: '/#protocol',
     },
     {
       text: 'Integrations',
-      url: '#integrations',
+      url: '/#integrations',
     },
     {
       text: 'Partners',
-      url: '#partners',
+      url: '/#partners',
     },
     {
       text: 'Blog',
-      url: '#blog',
+      url: '/blog',
     },
     {
       text: 'Media kit',
@@ -83,7 +111,7 @@ export const footerLinks = [
     },
     {
       text: 'Contact',
-      url: '#contact',
+      url: '/#contact',
     },
   ],
   [

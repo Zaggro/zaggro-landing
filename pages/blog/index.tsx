@@ -3,7 +3,10 @@ import { Article, getAllArticles } from 'lib/firebase/articles'
 import type { NextPage, GetStaticProps } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
+import styles from 'styles/pages/blog.module.scss'
 import ArticlePreview from 'components/ArticlePreview/ArticlePreview'
+import Contact from 'components/Contact/Contact'
+import Tabs from 'components/Tabs/Tabs'
 import Typography from 'components/Typography/Typography'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -41,7 +44,7 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
   }
 
   const articleLinks = shownArticles.map(
-    ({ title, category, date, slug, imageUrl }) => {
+    ({ title, category, date, slug, imageUrl, readLength }) => {
       return (
         <ArticlePreview
           imageUrl={imageUrl}
@@ -50,7 +53,7 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
           title={title}
           category={category}
           key={title + category}
-          readLength="? min read"
+          readLength={readLength}
         />
       )
     }
@@ -72,11 +75,25 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
           content="News and Articles from ZAGGRO"
         />
       </Head>
-      <div style={{ height: '50vh', textAlign: 'center' }}>
-        <Typography variant="display-md" tag="h1">
+      {articles && articles.length > 0 ? (
+        <>
+          <Typography tag="h1" variant="h1" className={styles.title}>
+            News and articles from ZAGGRO
+          </Typography>
+          <Tabs
+            variation="secondary"
+            items={categories}
+            onChange={handleTabChange}
+            className={styles.tabs}
+          />
+          <div className={styles.articles}>{articleLinks}</div>
+          <Contact />
+        </>
+      ) : (
+        <Typography tag="h1" variant="display-md" className={styles.noArticles}>
           Blog articles coming soon!
         </Typography>
-      </div>
+      )}
     </>
   )
 }

@@ -14,9 +14,11 @@ function SectionHeader({ title, description, className }: SectionHeaderProps) {
       <Typography variant="h2" tag="h2" className={styles.title}>
         {title}
       </Typography>
-      <Typography tag="p" variant="p-lg" className={styles.text}>
-        {description}
-      </Typography>
+      {description && (
+        <Typography tag="p" variant="p-lg" className={styles.text}>
+          {description}
+        </Typography>
+      )}
     </header>
   )
 }
