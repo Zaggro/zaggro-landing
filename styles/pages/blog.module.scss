@@ -1,3 +1,15 @@
+.noArticles {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  @include breakpoint('md') {
+    margin-bottom: 5rem;
+  }
+}
+
 .tabs {
   margin-bottom: 2.5rem;
   @include breakpoint('md') {

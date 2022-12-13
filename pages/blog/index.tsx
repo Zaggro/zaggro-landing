@@ -7,6 +7,7 @@ import styles from 'styles/pages/blog.module.scss'
 import ArticlePreview from 'components/ArticlePreview/ArticlePreview'
 import Contact from 'components/Contact/Contact'
 import Tabs from 'components/Tabs/Tabs'
+import Typography from 'components/Typography/Typography'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = await getAllArticles()
@@ -74,14 +75,25 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
           content="News and Articles from ZAGGRO"
         />
       </Head>
-      <Tabs
-        variation="secondary"
-        items={categories}
-        onChange={handleTabChange}
-        className={styles.tabs}
-      />
-      <div className={styles.articles}>{articleLinks}</div>
-      <Contact />
+      {articles && articles.length > 0 ? (
+        <>
+          <Typography tag="h1" variant="h1" className={styles.title}>
+            News and articles from ZAGGRO
+          </Typography>
+          <Tabs
+            variation="secondary"
+            items={categories}
+            onChange={handleTabChange}
+            className={styles.tabs}
+          />
+          <div className={styles.articles}>{articleLinks}</div>
+          <Contact />
+        </>
+      ) : (
+        <Typography tag="h1" variant="display-md" className={styles.noArticles}>
+          Blog articles coming soon!
+        </Typography>
+      )}
     </>
   )
 }
