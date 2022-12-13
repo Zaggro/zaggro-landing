@@ -1,4 +1,3 @@
-import CopyLink from 'public/svgs/social/copy-link.svg'
 import Discord from 'public/svgs/social/discord.svg'
 import Facebook from 'public/svgs/social/facebook.svg'
 import Github from 'public/svgs/social/github.svg'
@@ -58,10 +57,6 @@ export const shareButtons = [
   {
     icon: <Mail />,
     href: 'mailto:?subject=&body=',
-  },
-  {
-    icon: <CopyLink />,
-    onClick: () => navigator.clipboard.writeText(window.location.href),
   },
 ]
 
