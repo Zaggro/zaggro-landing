@@ -52,7 +52,7 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
           title={title}
           category={category}
           key={title + category}
-          readLength="? min read"
+          readLength={5}
         />
       )
     }

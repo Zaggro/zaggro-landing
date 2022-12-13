@@ -1,8 +1,9 @@
 import clsx from 'clsx'
-import Link from 'next/link'
+import dayjs from 'dayjs'
 import Adornment from 'components/Adornment/Adornment'
 import CardBase from 'components/CardBase/CardBase'
 import Typography from 'components/Typography/Typography'
+import Clock from 'public/svgs/clock.svg'
 import styles from './ArticlePreview.module.scss'
 
 export interface ArticlePreviewProps {
@@ -11,7 +12,7 @@ export interface ArticlePreviewProps {
   title: string
   category: string
   dateCreated: string
-  readLength: string
+  readLength?: number
   className?: string
 }
 
@@ -24,6 +25,7 @@ function ArticlePreview({
   readLength,
   className,
 }: ArticlePreviewProps) {
+  const formattedDate = dayjs(dateCreated).format('DD MMMM YYYY')
   return (
     <CardBase
       className={clsx(styles.root, className)}
@@ -39,8 +41,13 @@ function ArticlePreview({
           {title}
         </Typography>
         <div className={styles.bottomDetails}>
-          <div className={styles.detailsText}>{dateCreated}</div>
-          <div className={styles.detailsText}>{readLength}</div>
+          <div className={styles.detailsText}>{formattedDate}</div>
+          {readLength && (
+            <div className={styles.detailsText}>
+              <Clock className={styles.clock} />
+              {`${readLength} min read`}
+            </div>
+          )}
         </div>
       </div>
     </CardBase>

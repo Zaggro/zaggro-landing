@@ -63,8 +63,15 @@ $widthDesktop: 27rem;
 }
 
 .detailsText {
+  display: flex;
+  align-items: center;
+  gap: 0.5625rem;
   font-family: DMSans;
   font-size: 1rem;
   line-height: 1.5;
   color: var(--gray-lightest);
+}
+
+.clock {
+  fill: var(--gray-lightest);
 }
