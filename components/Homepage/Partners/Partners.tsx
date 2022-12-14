@@ -7,11 +7,11 @@ interface PartnersProps {
 }
 
 const partners = [
-  {
-    image: '/images/partners/sui-logo.png',
-    alt: 'Sui Foundation',
-    link: 'https://suifoundation.org/',
-  },
+  // {
+  //   image: '/images/partners/sui-logo.png',
+  //   alt: 'Sui Foundation',
+  //   link: 'https://suifoundation.org/',
+  // },
   {
     image: '/images/partners/p2p-solutions-logo.png',
     alt: 'P2Psolutions',
