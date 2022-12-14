@@ -11,30 +11,30 @@ import WhatsApp from 'public/svgs/social/whatsapp.svg'
 
 export const socialLinks = [
   {
-    url: '',
+    url: 'https://twitter.com/ZaggroSwap',
     name: 'Twitter',
     icon: <Twitter />,
   },
+  // {
+  //   url: '',
+  //   name: 'Discord',
+  //   icon: <Discord />,
+  // },
   {
-    url: '',
-    name: 'Discord',
-    icon: <Discord />,
-  },
-  {
-    url: '',
+    url: 'https://t.me/ZAGGRO_News',
     name: 'Telegram',
     icon: <Telegram />,
   },
   {
-    url: '',
+    url: 'https://github.com/orgs/Zaggro/repositories',
     name: 'Github',
     icon: <Github />,
   },
-  {
-    url: '',
-    name: 'LinkedIn',
-    icon: <LinkedIn />,
-  },
+  // {
+  //   url: '',
+  //   name: 'LinkedIn',
+  //   icon: <LinkedIn />,
+  // },
 ]
 
 export const shareButtons = [
