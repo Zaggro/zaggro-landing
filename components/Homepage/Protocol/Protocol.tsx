@@ -26,11 +26,11 @@ const features = [
     title: 'Advanced Liquidity',
     text: 'We integrated 20+ protocols across multiple chains on L1 and L2. Additionally, we complement open liquidity with exclusive pricing from the best market makers.',
   },
-  {
-    icon: <MultiChain />,
-    title: 'Multichain',
-    text: 'ZAGGRO protocol is available on multiple blockchains. We currently support SUI and Avalanche. We scale blockchain integrations by volume & activity priority.',
-  },
+  // {
+  //   icon: <MultiChain />,
+  //   title: 'Multichain',
+  //   text: 'ZAGGRO protocol is available on multiple blockchains. We currently support SUI and Avalanche. We scale blockchain integrations by volume & activity priority.',
+  // },
   {
     icon: <RFQ />,
     title: 'Onchain RFQ',

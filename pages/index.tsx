@@ -35,7 +35,7 @@ export default function Home({ articles }: BlogProps) {
       <Calculator />
       <AppPreview />
       <Protocol className={styles.scrollSection} id="protocol" />
-      <Statistics />
+      {/* <Statistics /> */}
       <Integrations className={styles.scrollSection} id="integrations" />
       <MobileApp />
       <InstitutionalPartners className={styles.scrollSection} id="partners" />

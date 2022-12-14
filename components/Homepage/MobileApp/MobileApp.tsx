@@ -38,7 +38,7 @@ function MobileApp({ className }: MobileAppProps) {
       <div className={styles.container}>
         <div className={styles.mobileAppPreview}>
           <img
-            src="/images/misc/mobile-app-prev@1.5.png"
+            src="/images/misc/mobile-app-prev@2.png"
             alt="Preview of mobile app"
           />
         </div>
