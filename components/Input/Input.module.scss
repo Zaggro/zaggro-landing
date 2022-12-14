@@ -1,0 +1,45 @@
+.root {
+  font-family: DMSans;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.label {
+  margin-bottom: 0.0625rem;
+}
+
+.error {
+  .input {
+    border-color: #e52c2c;
+
+    &:focus {
+      border-color: #e52c2c;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  background-color: var(--gray-darkest);
+  border: solid 1px var(--gray-lighter);
+  padding: 0.625rem;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: var(--gray-lightest);
+  }
+
+  &:focus {
+    border-color: #0096ff;
+  }
+}
+
+.textarea {
+  font-family: DMSans;
+  resize: vertical;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  outline: none;
+}
