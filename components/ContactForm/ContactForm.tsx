@@ -9,14 +9,12 @@ import { emailRegex } from 'constants/regex'
 import styles from './ContactForm.module.scss'
 
 export interface ContactFormProps {
-  isOpen?: boolean
-  onClose?: () => void
+  isOpen: boolean
+  onClose: () => void
   className?: string
 }
 
-function ContactForm({ className }: ContactFormProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
+function ContactForm({ isOpen, onClose, className }: ContactFormProps) {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -55,8 +53,8 @@ function ContactForm({ className }: ContactFormProps) {
   return (
     <Modal
       className={clsx(styles.root, className)}
-      isOpen
-      onClose={() => console.log('ssad')}
+      isOpen={isOpen}
+      onClose={onClose}
     >
       <header className={styles.header}>
         <Typography tag="h2" variant="h2">

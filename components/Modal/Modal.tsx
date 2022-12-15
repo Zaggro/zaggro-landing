@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { ReactNode, useRef, useCallback, useState } from 'react'
-import { createPortal } from 'react-dom'
+import Portal from 'components/HOC/Portal'
 import useKeyPress from 'hooks/useKeyPress'
 import useOnClickOutside from 'hooks/useOnClickOutside'
 import useTimeout from 'hooks/useTimeout'
@@ -22,7 +22,7 @@ function Modal({
   contentClassName,
   className,
 }: ModalProps) {
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const contentRef = useRef(null)
   const timer = useRef(0)
 
@@ -39,28 +39,29 @@ function Modal({
     return null
   }
 
-  return createPortal(
-    <div
-      className={clsx(
-        styles.root,
-        showModal ? styles.unfoldingAnimation : styles.hideUnfoldingAnimation,
-        className
-      )}
-    >
-      <div className={styles.modalBackground}>
-        <div
-          role="dialog"
-          ref={contentRef}
-          className={clsx(styles.modal, contentClassName)}
-        >
-          <button className={styles.closeButton} onClick={closeModal}>
-            <Close />
-          </button>
-          {children}
+  return (
+    <Portal>
+      <div
+        className={clsx(
+          styles.root,
+          showModal ? styles.unfoldingAnimation : styles.hideUnfoldingAnimation,
+          className
+        )}
+      >
+        <div className={styles.modalBackground}>
+          <div
+            role="dialog"
+            ref={contentRef}
+            className={clsx(styles.modal, contentClassName)}
+          >
+            <button className={styles.closeButton} onClick={closeModal}>
+              <Close />
+            </button>
+            {children}
+          </div>
         </div>
       </div>
-    </div>,
-    document.body
+    </Portal>
   )
 }
 
