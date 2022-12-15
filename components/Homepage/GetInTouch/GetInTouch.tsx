@@ -17,7 +17,7 @@ function GetInTouch({ className }: GetInTouchProps) {
       <Typography tag="h3" variant="h5">
         Integrate ZAGGRO services and EARN 80% of the fees.
       </Typography>
-      <Button href="mailto:info@zaggro.io">Get in touch</Button>
+      <Button href="#contact">Get in touch</Button>
     </CardBase>
   )
 }
