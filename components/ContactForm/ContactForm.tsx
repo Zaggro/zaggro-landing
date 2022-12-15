@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import clsx from 'clsx'
+import { sendUserMessage } from 'lib/firebase/contactForm'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import Button from 'components/Button/Button'
 import Input from 'components/Input/Input'
 import Modal from 'components/Modal/Modal'
@@ -48,7 +50,38 @@ function ContactForm({ isOpen, onClose, className }: ContactFormProps) {
     !!email &&
     !!message
 
-  const submit = () => {}
+  const resetFields = () => {
+    setFirstName('')
+    setLastName('')
+    setEmail('')
+    setCompanyName('')
+    setMessage('')
+  }
+
+  const submit = async () => {
+    if (allFieldsAreValid) {
+      await toast.promise(
+        () =>
+          sendUserMessage({
+            firstName,
+            lastName,
+            email,
+            companyName,
+            // Replace new lines with <br /> to preserve formatting in the email
+            message: message.replace(/\n\r?/g, '<br />'),
+          }),
+        {
+          pending: 'Sending message',
+          success: 'Message sent 👌',
+          error: 'Message sending failed 🤯',
+        },
+        {
+          closeButton: false,
+        }
+      )
+      resetFields()
+    }
+  }
 
   return (
     <Modal
