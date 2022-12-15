@@ -19,7 +19,7 @@ export interface ArticleProps {
   imageUrl: string
   date: string
   category: string
-  readLength: number | null
+  readLength?: string
 }
 
 const Container = ({
