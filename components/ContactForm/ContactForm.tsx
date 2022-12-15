@@ -148,10 +148,7 @@ function ContactForm({ isOpen, onClose, className }: ContactFormProps) {
           value={message}
           onChange={handleMessageChange}
           onBlur={(value) => {
-            if (!value) {
-              console.log(value)
-              setMessageError(true)
-            }
+            if (!value) setMessageError(true)
           }}
           error={messageError}
         />
