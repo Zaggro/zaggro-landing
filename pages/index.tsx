@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Article, getAllArticles } from 'lib/firebase/articles'
 import { GetStaticProps } from 'next'
 import styles from 'styles/pages/home.module.scss'
@@ -43,7 +44,10 @@ export default function Home({ articles }: BlogProps) {
       <Partners />
       <Audits className={styles.scrollSection} id="audits" />
       <BlogSection id="blog" articles={articles?.slice(0, 3)} title="Blog" />
-      <Contact className={styles.scrollSection} id="contact" />
+      <Contact
+        className={clsx(styles.scrollSection, styles.contact)}
+        id="contact"
+      />
     </div>
   )
 }
