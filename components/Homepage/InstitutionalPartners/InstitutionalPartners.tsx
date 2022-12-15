@@ -57,11 +57,10 @@ function InstitutionalPartners({ className, id }: InstitutionalPartnersProps) {
       />
       <ul className={styles.cards}>
         {cards.map(({ icon, title, text }) => (
-          <li key={title} className={styles.card}>
+          <li key={title} className={styles.cardItem}>
             <CardBase
               key={title}
               icon={icon}
-              className={styles.card}
               contentClassName={styles.cardContent}
             >
               <Typography variant="h5" tag="h3" className={styles.cardTitle}>
