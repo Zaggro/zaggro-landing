@@ -15,7 +15,7 @@ export default {
     category: 'Category',
     description:
       'A very long description, A very long description, A very long description, A very long description, A very long description, A very long description, A very long description, A very long description, A very long description, A very long description, A very long description, A very long description,',
-    readLength: 2,
+    readLength: '2',
   },
 } as Meta<ArticlePreviewProps>
 
