@@ -15,3 +15,10 @@
     scroll-margin-top: $desktop-sticky-nav-height;
   }
 }
+
+.contact {
+  margin-top: 1.25rem;
+  @include breakpoint('lg') {
+    margin-top: 0;
+  }
+}
