@@ -21,12 +21,17 @@ $widthDesktop: 27rem;
 
 .imageWrapper {
   position: relative;
-  margin-bottom: 1.25rem;
+  width: $widthMobile + 0.25rem;
+  height: 12.9375rem;
+  @include breakpoint('lg') {
+    width: $widthDesktop + 0.25rem;
+    height: 15.625rem;
+  }
 }
 
 .category {
   position: absolute;
-  bottom: -0.25rem;
+  bottom: -0.625rem;
   left: 1.25rem;
 }
 
@@ -48,10 +53,10 @@ $widthDesktop: 27rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 1rem 1rem 1rem;
+  padding: 1rem;
   height: 100%;
   @include breakpoint('lg') {
-    padding: 0 1.25rem 1.25rem 1.25rem;
+    padding: 1.25rem;
   }
 }
 

@@ -9,9 +9,10 @@
 }
 
 .card {
-  padding: 1.25rem;
+  padding: 1rem;
   width: 100%;
   @include breakpoint('lg') {
+    padding: 1.25rem;
     flex-grow: 1;
     max-width: 27rem;
   }

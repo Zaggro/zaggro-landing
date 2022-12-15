@@ -27,10 +27,16 @@
 }
 
 .cardContent {
-  padding: 1rem 1rem 1.375rem 1rem;
+  padding: 1rem;
+  @include breakpoint('lg') {
+    padding: 0.6875rem 1.25rem 1.25rem 1.25rem;
+  }
 }
 
 .cardTitle {
   color: #0096ff;
-  margin-bottom: 0.8125rem;
+  margin-bottom: 0.875rem;
+  @include breakpoint('lg') {
+    margin-bottom: 0.5625rem;
+  }
 }
