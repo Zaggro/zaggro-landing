@@ -1,6 +1,14 @@
 $circleImageSize: 4.875rem;
 $halfCircleImageSize: $circleImageSize / 2;
 
+.link {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px 2px rgba(0, 149, 255, 0.08),
+      0 0 10px 2px rgba(0, 149, 255, 0.3);
+  }
+}
+
 .root {
   display: flex;
   width: 100%;
