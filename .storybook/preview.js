@@ -8,6 +8,14 @@ Object.defineProperty(nextImage, 'default', {
   value: (props) => <img {...props} />,
 })
 
+export const decorators = [
+  (Story) => (
+    <div id="portal">
+      <Story />
+    </div>
+  ),
+]
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

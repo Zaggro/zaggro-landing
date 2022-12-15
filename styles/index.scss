@@ -13,4 +13,9 @@ body {
   font-weight: 400;
   color: var(--white);
   background-color: var(--gray-darkest);
+
+  *::selection {
+    background-color: var(--primary-main);
+    color: white;
+  }
 }
