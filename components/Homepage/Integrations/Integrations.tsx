@@ -17,6 +17,7 @@ const integrations = [
     description:
       'Open-sourced Sui Wallet gives Sui users the ability to create an address, view and manage assets on the Sui network, and interact with dApps. The Sui Wallet serves as a reference implementation for other potential wallets and applications in the Sui ecosystem.',
     svg: sui,
+    href: 'https://chrome.google.com/webstore/detail/sui-wallet/opcgpfmipidbgpenhmajoajpbobppdil',
   },
   {
     title: 'More partners',
@@ -34,8 +35,13 @@ function Integrations({ id, className }: IntegrationsProps) {
         description="Discover some of the top DeFi apps, protocols and tools using ZAGGRO Protocol."
       />
       <div className={styles.cards}>
-        {integrations.map(({ title, label, description, svg: Svg }) => (
-          <CardBase key={title} className={styles.card}>
+        {integrations.map(({ title, label, description, href, svg: Svg }) => (
+          <CardBase
+            key={title}
+            className={styles.card}
+            href={href}
+            target="_blank"
+          >
             <div className={styles.topContainer}>
               <div>
                 <Typography tag="h3" variant="h5">
