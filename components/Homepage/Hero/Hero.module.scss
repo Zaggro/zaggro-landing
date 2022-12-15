@@ -4,6 +4,9 @@
   align-items: center;
   text-align: center;
   gap: 1.25rem;
+  @include breakpoint('lg') {
+    gap: 1.875rem;
+  }
 }
 
 .highlighted {
