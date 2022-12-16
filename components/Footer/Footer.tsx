@@ -33,6 +33,7 @@ function Footer({ className }: FooterProps) {
             href={url}
             key={text}
             style={!url ? { pointerEvents: 'none' } : {}}
+            tabIndex={url ? 0 : -1}
             className={clsx(styles.link, !url && styles.disabled)}
             {...(externalUrlRegex.test(url) ? externalLinkProps : {})}
           >

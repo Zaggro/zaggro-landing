@@ -1,6 +1,8 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
+import useViewportSize from 'hooks/useViewportSize'
 import styles from './MobileApp.module.scss'
 
 interface MobileAppProps {
@@ -29,20 +31,30 @@ const tokenUtils = [
 ]
 
 function MobileApp({ className }: MobileAppProps) {
+  const { isTablet } = useViewportSize()
   return (
-    <section className={clsx(styles.root, className)}>
+    <motion.section className={clsx(styles.root, className)}>
       <SectionHeader
         title="ZAGGRO on Mobile"
         description="Innovational decentralized trading & crypto management application."
       />
       <div className={styles.container}>
-        <div className={styles.mobileAppPreview}>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.52, once: true }}
+          className={styles.mobileAppPreview}
+        >
           <img
             src="/images/misc/mobile-app-prev@2.png"
             alt="Preview of mobile app"
           />
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.4, once: true }}
+        >
           <Typography variant="h5" tag="h3" className={styles.title}>
             ZAGGRO Wherever You Go
           </Typography>
@@ -68,9 +80,14 @@ function MobileApp({ className }: MobileAppProps) {
             src="/images/misc/mobile-app-stores.png"
             alt="Mobile app on App Store and Google Play coming soon!"
           />
-        </div>
+        </motion.div>
       </div>
-      <ul className={styles.tokenUtils}>
+      <motion.ul
+        className={styles.tokenUtils}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
         {tokenUtils.map(({ image, title, description }) => (
           <li key={title} className={styles.tokenUtil}>
             <div className={styles.utilImageContainer}>
@@ -88,8 +105,8 @@ function MobileApp({ className }: MobileAppProps) {
             </Typography>
           </li>
         ))}
-      </ul>
-    </section>
+      </motion.ul>
+    </motion.section>
   )
 }
 

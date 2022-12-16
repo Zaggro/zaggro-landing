@@ -1,7 +1,9 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import CardBase from 'components/CardBase/CardBase'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
+import { fromBelowVariant } from 'constants/framerMotion'
 import sui from 'public/svgs/integrations/sui.svg'
 import styles from './Integrations.module.scss'
 
@@ -34,35 +36,38 @@ function Integrations({ id, className }: IntegrationsProps) {
         title="Ecosystem Integrations"
         description="Discover some of the top DeFi apps, protocols and tools using ZAGGRO Protocol."
       />
-      <div className={styles.cards}>
+      <motion.div
+        className={styles.cards}
+        variants={fromBelowVariant.container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {integrations.map(({ title, label, description, href, svg: Svg }) => (
-          <CardBase
-            key={title}
-            className={styles.card}
-            href={href}
-            target="_blank"
-          >
-            <div className={styles.topContainer}>
-              <div>
-                <Typography tag="h3" variant="h5">
-                  {title}
-                </Typography>
-                <Typography tag="p" variant="p-lg" className={styles.label}>
-                  {label}
-                </Typography>
-              </div>
-              {Svg && (
-                <div className={styles.svg}>
-                  <Svg />
+          <motion.div key={title} variants={fromBelowVariant.item}>
+            <CardBase className={styles.card} href={href} target="_blank">
+              <div className={styles.topContainer}>
+                <div>
+                  <Typography tag="h3" variant="h5">
+                    {title}
+                  </Typography>
+                  <Typography tag="p" variant="p-lg" className={styles.label}>
+                    {label}
+                  </Typography>
                 </div>
-              )}
-            </div>
-            <Typography tag="p" variant="p-lg" className={styles.desc}>
-              {description}
-            </Typography>
-          </CardBase>
+                {Svg && (
+                  <div className={styles.svg}>
+                    <Svg />
+                  </div>
+                )}
+              </div>
+              <Typography tag="p" variant="p-lg" className={styles.desc}>
+                {description}
+              </Typography>
+            </CardBase>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

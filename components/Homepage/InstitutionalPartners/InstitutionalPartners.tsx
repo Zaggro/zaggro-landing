@@ -1,7 +1,9 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import CardBase from 'components/CardBase/CardBase'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
+import { fromRightVariant } from 'constants/framerMotion'
 import AssetManager from 'public/svgs/institutional-partners/asset-manager.svg'
 import Bank from 'public/svgs/institutional-partners/bank.svg'
 import Bots from 'public/svgs/institutional-partners/bots.svg'
@@ -55,9 +57,19 @@ function InstitutionalPartners({ className, id }: InstitutionalPartnersProps) {
         title="Our Institutional Partners"
         description="We built ZAGGRO with the focus on financial institutions and developers. Our partners can smoothly offer DeFi services to their users and clients using the API."
       />
-      <ul className={styles.cards}>
+      <motion.ul
+        className={styles.cards}
+        variants={fromRightVariant.container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {cards.map(({ icon, title, text }) => (
-          <li key={title} className={styles.cardItem}>
+          <motion.li
+            key={title}
+            className={styles.cardItem}
+            variants={fromRightVariant.item}
+          >
             <CardBase
               key={title}
               icon={icon}
@@ -70,9 +82,9 @@ function InstitutionalPartners({ className, id }: InstitutionalPartnersProps) {
                 {text}
               </Typography>
             </CardBase>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </section>
   )
 }

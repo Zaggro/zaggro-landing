@@ -1,6 +1,8 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import useViewportSize from 'hooks/useViewportSize'
+import { fromBelowMotion } from 'constants/framerMotion'
 import styles from './AppPreview.module.scss'
 
 interface AppPreviewProps {
@@ -13,7 +15,7 @@ function AppPreview({ className }: AppPreviewProps) {
   return (
     <section className={clsx(styles.root, className)}>
       <SectionHeader title="ZAGGRO Protocol Preview" />
-      <div className={styles.imageContainer}>
+      <motion.div {...fromBelowMotion} className={styles.imageContainer}>
         {isPhablet ? (
           <img
             src="/images/screenshots/swap-desktop@2.png"
@@ -27,7 +29,7 @@ function AppPreview({ className }: AppPreviewProps) {
             className={styles.imageMobile}
           />
         )}
-      </div>
+      </motion.div>
     </section>
   )
 }

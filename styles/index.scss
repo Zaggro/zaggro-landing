@@ -19,3 +19,32 @@ body {
     color: white;
   }
 }
+
+// Special style for tab users to improve accessibility
+@mixin focus-outline {
+  outline: dashed 2px #0096ff;
+  outline-offset: 3px;
+}
+
+// Fallback for browsers that don't support :focus-visible
+*:focus {
+  @include focus-outline;
+}
+
+// Remove the focus indicator on mouse-focus for browsers that do support :focus-visible
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// Designed focus state
+*:focus-visible {
+  @include focus-outline;
+}
+
+// These elements have custom focus styles
+input,
+textarea {
+  &:focus-visible {
+    outline: none;
+  }
+}

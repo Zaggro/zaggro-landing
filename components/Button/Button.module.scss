@@ -7,7 +7,7 @@ $gradient-color: linear-gradient(
 );
 
 .root:not(.disabled) {
-  transition: transform 0.25s ease;
+  transition: all 0.25s ease;
 
   &:active {
     transform: scale(0.97);
