@@ -150,12 +150,12 @@ export const footerLinks = [
       url: '',
     },
     {
-      text: 'Docs',
-      url: '',
+      text: 'Pitch Deck',
+      url: '/pdf/Zaggro_Pitch_Deck.pdf',
     },
     {
       text: 'Privacy Policy',
-      url: '',
+      url: '/privacy-policy',
     },
   ],
 ]

@@ -1,4 +1,3 @@
-import capitalizeFirstLetter from 'lib/capitalizeFirstLetter'
 import { Article, getAllArticles } from 'lib/firebase/articles'
 import type { NextPage, GetStaticProps } from 'next'
 import { useState } from 'react'
@@ -25,20 +24,17 @@ interface BlogProps {
 const Blog: NextPage<BlogProps> = ({ articles }) => {
   const [shownArticles, setShownArticles] = useState(articles)
 
-  let categories: string[] = ['All']
+  let categories: string[] = ['ALL']
   articles.forEach(({ category }) => {
-    const fixedCategoryString = capitalizeFirstLetter(category.trim())
-    if (!categories.includes(fixedCategoryString)) {
-      categories.push(fixedCategoryString)
-    }
+    categories.push(category.toUpperCase())
   })
 
   const handleTabChange = (tabItem: string) => {
-    if (tabItem === 'All') {
+    if (tabItem === 'ALL') {
       return setShownArticles(articles)
     }
     const filteredArticles = articles.filter(
-      ({ category }) => category === tabItem
+      ({ category }) => category.toUpperCase() === tabItem.toUpperCase()
     )
     setShownArticles(filteredArticles)
   }

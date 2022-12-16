@@ -13,9 +13,7 @@ export default {
 
 const Template: Story<InputProps> = (args) => {
   const [value, setValue] = useState('')
-  return (
-    <Input {...args} value={value} onChange={(e) => setValue(e.target.value)} />
-  )
+  return <Input {...args} value={value} onChange={(val) => setValue(val)} />
 }
 
 export const Default = Template.bind({})

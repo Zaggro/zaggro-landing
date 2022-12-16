@@ -70,7 +70,7 @@ function CardBase({
 
   if (href) {
     return (
-      <Link href={href} passHref {...commonProps}>
+      <Link href={href} passHref target={target} {...commonProps}>
         {content}
       </Link>
     )

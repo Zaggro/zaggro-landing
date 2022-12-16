@@ -14,7 +14,7 @@ export interface ArticleFirestoreDoc {
   active: boolean
   date: Timestamp
   imageUrl: string
-  readLength: number | null
+  readLength: string
   category: string
   description: string
   deleted?: string
@@ -26,7 +26,7 @@ export interface Article {
   content: string
   date: string
   imageUrl: string
-  readLength: number | null
+  readLength: string
   category: string
   description: string
 }
