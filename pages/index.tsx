@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import { Article, getAllArticles } from 'lib/firebase/articles'
 import { GetStaticProps } from 'next'
 import styles from 'styles/pages/home.module.scss'
@@ -15,6 +16,7 @@ import MobileApp from 'components/Homepage/MobileApp/MobileApp'
 import Partners from 'components/Homepage/Partners/Partners'
 import Protocol from 'components/Homepage/Protocol/Protocol'
 import Statistics from 'components/Homepage/Statistics/Statistics'
+import { fromBelowMotion } from 'constants/framerMotion'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = await getAllArticles()
@@ -33,14 +35,22 @@ export default function Home({ articles }: BlogProps) {
   return (
     <div className={styles.root}>
       <Hero />
-      <Calculator />
+      <motion.div
+        {...fromBelowMotion}
+        transition={{ duration: 0.2, delay: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Calculator />
+      </motion.div>
       <AppPreview />
       <Protocol className={styles.scrollSection} id="protocol" />
       {/* <Statistics /> */}
       <Integrations className={styles.scrollSection} id="integrations" />
       <MobileApp />
       <InstitutionalPartners className={styles.scrollSection} id="partners" />
-      <GetInTouch />
+      <motion.div {...fromBelowMotion}>
+        <GetInTouch />
+      </motion.div>
       <Partners />
       <Audits className={styles.scrollSection} id="audits" />
       <BlogSection id="blog" articles={articles?.slice(0, 3)} title="Blog" />

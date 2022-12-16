@@ -1,7 +1,9 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import CardBase from 'components/CardBase/CardBase'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
+import { fromBelowVariant } from 'constants/framerMotion'
 import styles from './Audits.module.scss'
 
 interface AuditsProps {
@@ -31,26 +33,33 @@ function Audits({ className, id }: AuditsProps) {
         title="Audits"
         description="ZAGGRO protocol will be audited by a professional 3rd party and will conduct a decentralized bug-bounty campaign for mass testing."
       />
-      <div className={styles.cards}>
+      <motion.div
+        variants={fromBelowVariant.container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className={styles.cards}
+      >
         {audits.map(({ title, label, image, comingSoon }) => (
-          <CardBase
+          <motion.div
             key={title + label}
-            comingSoon={comingSoon}
             className={styles.card}
-            contentClassName={styles.content}
+            variants={fromBelowVariant.item}
           >
-            <div className={styles.texts}>
-              <Typography tag="h3" variant="h5">
-                {title}
-              </Typography>
-              <Typography tag="p" variant="p-lg" className={styles.label}>
-                {label}
-              </Typography>
-            </div>
-            <img src={image} alt={label} />
-          </CardBase>
+            <CardBase comingSoon={comingSoon} contentClassName={styles.content}>
+              <div className={styles.texts}>
+                <Typography tag="h3" variant="h5">
+                  {title}
+                </Typography>
+                <Typography tag="p" variant="p-lg" className={styles.label}>
+                  {label}
+                </Typography>
+              </div>
+              <img src={image} alt={label} />
+            </CardBase>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

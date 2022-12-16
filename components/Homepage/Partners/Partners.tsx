@@ -1,5 +1,7 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
+import { fromBelowVariant } from 'constants/framerMotion'
 import styles from './Partners.module.scss'
 
 interface PartnersProps {
@@ -31,9 +33,15 @@ function Partners({ className }: PartnersProps) {
         title="Our Partners"
         description="ZAGGRO is partnered with DeFi leading business developers."
       />
-      <ul className={styles.partners}>
+      <motion.ul
+        variants={fromBelowVariant.container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className={styles.partners}
+      >
         {partners.map(({ image, alt, link }) => (
-          <li key={alt}>
+          <motion.li key={alt} variants={fromBelowVariant.item}>
             <a
               href={link}
               target="_blank"
@@ -42,9 +50,9 @@ function Partners({ className }: PartnersProps) {
             >
               <img src={image} alt={alt} />
             </a>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </section>
   )
 }

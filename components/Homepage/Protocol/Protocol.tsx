@@ -1,7 +1,9 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import CardBase from 'components/CardBase/CardBase'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
+import { fromLeftVariant } from 'constants/framerMotion'
 import API from 'public/svgs/protocol/api.svg'
 import Liquidity from 'public/svgs/protocol/liquidity.svg'
 import MultiChain from 'public/svgs/protocol/multi-chain.svg'
@@ -58,23 +60,30 @@ function Protocol({ id, className }: ProtocolProps) {
         individuals and institutional traders to tap effortlessly into the
         fragmented liquidity pools."
       />
-      <div className={styles.cards}>
+      <motion.div
+        className={styles.cards}
+        variants={fromLeftVariant.container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {features.map(({ icon, title, text }) => (
-          <CardBase
-            key={title}
-            icon={icon}
-            className={styles.card}
-            contentClassName={styles.cardContent}
-          >
-            <Typography variant="h3" tag="h3" className={styles.cardTitle}>
-              {title}
-            </Typography>
-            <Typography tag="p" variant="p-lg" className={styles.cardText}>
-              {text}
-            </Typography>
-          </CardBase>
+          <motion.div key={title} variants={fromLeftVariant.item}>
+            <CardBase
+              icon={icon}
+              className={styles.card}
+              contentClassName={styles.cardContent}
+            >
+              <Typography variant="h3" tag="h3" className={styles.cardTitle}>
+                {title}
+              </Typography>
+              <Typography tag="p" variant="p-lg" className={styles.cardText}>
+                {text}
+              </Typography>
+            </CardBase>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
