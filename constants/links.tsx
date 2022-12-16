@@ -155,7 +155,7 @@ export const footerLinks = [
     },
     {
       text: 'Privacy Policy',
-      url: '',
+      url: '/privacy-policy',
     },
   ],
 ]

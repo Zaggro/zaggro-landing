@@ -1,0 +1,19 @@
+.root {
+  max-width: 55.5rem;
+  margin: 0 auto 3.75rem auto;
+  padding: 0 1rem;
+}
+
+.title {
+  margin-bottom: 1.875rem;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  a {
+    color: #0096ff;
+  }
+}
