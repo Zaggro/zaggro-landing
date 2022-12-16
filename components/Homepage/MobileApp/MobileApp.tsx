@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
 import Typography from 'components/Typography/Typography'
+import useViewportSize from 'hooks/useViewportSize'
 import styles from './MobileApp.module.scss'
 
 interface MobileAppProps {
@@ -30,15 +31,16 @@ const tokenUtils = [
 ]
 
 function MobileApp({ className }: MobileAppProps) {
+  const { isTablet } = useViewportSize()
   return (
-    <section className={clsx(styles.root, className)}>
+    <motion.section className={clsx(styles.root, className)}>
       <SectionHeader
         title="ZAGGRO on Mobile"
         description="Innovational decentralized trading & crypto management application."
       />
       <div className={styles.container}>
         <motion.div
-          initial={{ opacity: 0, x: 300 }}
+          initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ amount: 0.52, once: true }}
           className={styles.mobileAppPreview}
@@ -49,7 +51,7 @@ function MobileApp({ className }: MobileAppProps) {
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: -300 }}
+          initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ amount: 0.4, once: true }}
         >
@@ -104,7 +106,7 @@ function MobileApp({ className }: MobileAppProps) {
           </li>
         ))}
       </motion.ul>
-    </section>
+    </motion.section>
   )
 }
 
