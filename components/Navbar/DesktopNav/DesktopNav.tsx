@@ -1,5 +1,6 @@
 import useNavbar from '../useNavbar'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Button from 'components/Button/Button'
 import Typography from 'components/Typography/Typography'
@@ -12,15 +13,20 @@ interface DesktopNavProps {
 
 function DesktopNav({ className }: DesktopNavProps) {
   const { showNav, lastScrollY } = useNavbar()
-  const headerDefaultHeight = 122
+  const headerDefaultHeight = 80
   const scrollIsMoreThanHeader = lastScrollY > headerDefaultHeight
   const hideNavbar = !showNav && scrollIsMoreThanHeader
 
   return (
-    <nav
+    <motion.nav
+      animate={{ y: hideNavbar ? -80 : 0 }}
+      transition={{
+        type: 'spring',
+        duration: 0.3,
+        bounce: 0.15,
+      }}
       className={clsx(
         styles.root,
-        hideNavbar && styles.hide,
         scrollIsMoreThanHeader && styles.slim,
         className
       )}
@@ -28,13 +34,13 @@ function DesktopNav({ className }: DesktopNavProps) {
       <div className={styles.container}>
         <Link href="/" className={styles.link}>
           {scrollIsMoreThanHeader ? (
-            <img
+            <motion.img
               src="/images/logo/zaggro-no-text@2.png"
               alt="ZAGGRO logo"
               className={styles.logo}
             />
           ) : (
-            <img
+            <motion.img
               src="/images/logo/zaggro@2.png"
               alt="ZAGGRO logo"
               className={styles.logoWithText}
@@ -56,7 +62,7 @@ function DesktopNav({ className }: DesktopNavProps) {
           Launch App
         </Button>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 
