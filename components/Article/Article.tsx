@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import dayjs from 'dayjs'
+import { motion } from 'framer-motion'
 import Blocks from 'editorjs-blocks-react-renderer'
 import { cloneElement } from 'react'
 import { toast } from 'react-toastify'
@@ -7,6 +8,7 @@ import { useRouter } from 'next/router'
 import Adornment from 'components/Adornment/Adornment'
 import Typography from 'components/Typography/Typography'
 import useViewportSize from 'hooks/useViewportSize'
+import { fromBelowVariant } from 'constants/framerMotion'
 import { shareButtons } from 'constants/links'
 import Clock from 'public/svgs/clock.svg'
 import CopyLink from 'public/svgs/social/copy-link.svg'
@@ -50,7 +52,13 @@ const Article = ({
   const formattedDate = dayjs(date).format('DD MMMM YYYY')
 
   const renderShareButtons = (
-    <div className={styles.shareButtons}>
+    <motion.div
+      className={styles.shareButtons}
+      variants={fromBelowVariant.container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       {shareButtons.map(({ icon, href }) => {
         const shareUrl = `${href}https://zaggro.io${asPath}`
         const iconWithClass = cloneElement(icon, {
@@ -58,7 +66,8 @@ const Article = ({
         })
 
         return (
-          <a
+          <motion.a
+            variants={fromBelowVariant.item}
             key={shareUrl}
             href={shareUrl}
             target="_blank"
@@ -66,13 +75,17 @@ const Article = ({
             className={styles.shareButton}
           >
             {iconWithClass}
-          </a>
+          </motion.a>
         )
       })}
-      <button className={styles.shareButton} onClick={copyLink}>
+      <motion.button
+        variants={fromBelowVariant.item}
+        className={styles.shareButton}
+        onClick={copyLink}
+      >
         <CopyLink className={styles.shareIcon} />
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   )
 
   return (
