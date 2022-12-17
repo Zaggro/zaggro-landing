@@ -1,10 +1,12 @@
 import useNavbar from '../useNavbar'
 import clsx from 'clsx'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from 'components/Button/Button'
 import Typography from 'components/Typography/Typography'
+import { fromRightVariant } from 'constants/framerMotion'
 import { headerLinks } from 'constants/links'
 import styles from './MobileNav.module.scss'
 
@@ -12,7 +14,6 @@ interface MobileNavProps {
   className?: string
 }
 
-// TODO: Menu open/close animation
 function MobileNav({ className }: MobileNavProps) {
   const [open, setOpen] = useState(false)
 
@@ -61,20 +62,34 @@ function MobileNav({ className }: MobileNavProps) {
           </button>
         </div>
       </div>
-      {open && (
-        <>
-          <ul className={styles.links}>
-            {headerLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} onClick={() => setOpen(false)}>
-                  <Typography variant="menu-md">{link.text}</Typography>
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className={styles.backdrop} />
-        </>
-      )}
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.ul
+              className={styles.links}
+              variants={fromRightVariant.container}
+              initial="hidden"
+              animate="visible"
+              exit={{ x: '100%', opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {headerLinks.map((link) => (
+                <motion.li key={link.href} variants={fromRightVariant.item}>
+                  <a href={link.href} onClick={() => setOpen(false)}>
+                    <Typography variant="menu-md">{link.text}</Typography>
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+            <motion.div
+              className={styles.backdrop}
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ opacity: 0, x: '100%' }}
+            />
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }

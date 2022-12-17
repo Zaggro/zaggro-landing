@@ -1,15 +1,19 @@
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import { NextPage } from 'next'
 import styles from 'styles/pages/privacy-policy.module.scss'
 import Typography from 'components/Typography/Typography'
+import { fromBelowMotion } from 'constants/framerMotion'
 
 const PrivacyPolicy: NextPage = () => {
   return (
     <div className={clsx(styles.root)}>
-      <Typography tag="h1" variant="h1" className={styles.title}>
-        Privacy Policy
-      </Typography>
-      <div className={styles.paragraphs}>
+      <motion.div {...fromBelowMotion}>
+        <Typography tag="h1" variant="h1" className={styles.title}>
+          Privacy Policy
+        </Typography>
+      </motion.div>
+      <motion.div className={styles.paragraphs} {...fromBelowMotion}>
         <Typography tag="p" variant="p-lg">
           When you use the Interface, the only information we collect from you
           is your blockchain wallet address, completed transaction hashes, and
@@ -55,7 +59,7 @@ const PrivacyPolicy: NextPage = () => {
           publicity, right of privacy, or other proprietary or intellectual
           property rights under the law.
         </Typography>
-      </div>
+      </motion.div>
     </div>
   )
 }

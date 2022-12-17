@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { Article, getAllArticles } from 'lib/firebase/articles'
 import type { NextPage, GetStaticProps } from 'next'
 import { useState } from 'react'
@@ -7,6 +8,7 @@ import ArticlePreview from 'components/ArticlePreview/ArticlePreview'
 import Contact from 'components/Contact/Contact'
 import Tabs from 'components/Tabs/Tabs'
 import Typography from 'components/Typography/Typography'
+import { fromBelowMotion } from 'constants/framerMotion'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = await getAllArticles()
@@ -42,15 +44,23 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
   const articleLinks = shownArticles.map(
     ({ title, category, date, slug, imageUrl, readLength }) => {
       return (
-        <ArticlePreview
-          imageUrl={imageUrl}
-          articleUrl={`/blog/${slug}`}
-          dateCreated={date}
-          title={title}
-          category={category}
-          key={title + category}
-          readLength={readLength}
-        />
+        <motion.div
+          className={styles.wrapper}
+          key={slug + date + category}
+          layout
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+        >
+          <ArticlePreview
+            imageUrl={imageUrl}
+            articleUrl={`/blog/${slug}`}
+            dateCreated={date}
+            title={title}
+            category={category}
+            readLength={readLength}
+          />
+        </motion.div>
       )
     }
   )
@@ -73,16 +83,21 @@ const Blog: NextPage<BlogProps> = ({ articles }) => {
       </Head>
       {articles && articles.length > 0 ? (
         <>
-          <Typography tag="h1" variant="h1" className={styles.title}>
-            News and articles from ZAGGRO
-          </Typography>
+          <motion.div {...fromBelowMotion}>
+            <Typography tag="h1" variant="h1" className={styles.title}>
+              News and articles from ZAGGRO
+            </Typography>
+          </motion.div>
           <Tabs
             variation="secondary"
             items={categories}
             onChange={handleTabChange}
             className={styles.tabs}
           />
-          <div className={styles.articles}>{articleLinks}</div>
+          <div className={styles.articles}>
+            <AnimatePresence>{articleLinks}</AnimatePresence>
+          </div>
+
           <Contact />
         </>
       ) : (
