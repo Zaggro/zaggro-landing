@@ -140,12 +140,11 @@
   right: 0;
   bottom: 0;
   height: 100vh;
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
-  background-color: linear-gradient(
-    347deg,
-    var(--tertiary-main) 98%,
-    var(--gray-main) 2%
+  background: linear-gradient(
+    -45deg,
+    rgba(88, 0, 255, 0.8),
+    rgba(97, 75, 137, 0.8)
   );
   z-index: 1;
 }
