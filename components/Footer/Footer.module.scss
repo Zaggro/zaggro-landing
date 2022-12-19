@@ -36,9 +36,25 @@
   margin-bottom: 0.625rem;
 }
 
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
 .socialLinks {
   display: flex;
   gap: 0.9375rem;
+}
+
+.comingSoon {
+  font-family: DMSans;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  line-height: 1.73;
+}
+
+.comingSoonMarker {
+  color: #0096ff;
 }
 
 .socialIcon {
@@ -50,6 +66,7 @@
 }
 
 .links {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -72,6 +89,12 @@
     width: 100%;
     max-width: 47.5rem;
   }
+
+  .comingSoon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .linkSection {
@@ -81,7 +104,6 @@
   .link {
     &.disabled {
       pointer-events: none;
-      color: #614b89;
     }
   }
 }
