@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { cloneElement } from 'react'
 import Link from 'next/link'
+import Adornment from 'components/Adornment/Adornment'
 import Typography from 'components/Typography/Typography'
 import useViewportSize from 'hooks/useViewportSize'
 import { footerLinks, socialLinks } from 'constants/links'
@@ -38,12 +39,18 @@ function Footer({ className }: FooterProps) {
             {...(externalUrlRegex.test(url) ? externalLinkProps : {})}
           >
             {text}
+            <span className={styles.comingSoonMarker}>{!url ? '*' : ''}</span>
           </a>
         )
       })}
     </div>
   ))
 
+  const comingSoon = (
+    <p className={styles.comingSoon}>
+      Coming Soon<span className={styles.comingSoonMarker}>*</span>
+    </p>
+  )
   return (
     <footer className={clsx(styles.root, className)}>
       <div className={styles.top}>
@@ -63,9 +70,14 @@ function Footer({ className }: FooterProps) {
               </Typography>
             </>
           )}
-          <div className={styles.socialLinks}>{socials}</div>
+          <div className={styles.spaceBetween}>
+            <div className={styles.socialLinks}>{socials}</div>
+            {!isTablet && comingSoon}
+          </div>
         </div>
-        <div className={styles.links}>{links}</div>
+        <div className={styles.links}>
+          {links} {isTablet && comingSoon}
+        </div>
       </div>
       <div className={styles.bottom}>
         <p className={styles.copyright}>

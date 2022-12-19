@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ReactNode, useRef, useCallback, useState } from 'react'
+import { ReactNode, useRef, useCallback, useState, useEffect } from 'react'
 import Portal from 'components/HOC/Portal'
 import useKeyPress from 'hooks/useKeyPress'
 import useOnClickOutside from 'hooks/useOnClickOutside'
@@ -25,6 +25,19 @@ function Modal({
   const [showModal, setShowModal] = useState(false)
   const contentRef = useRef(null)
   const timer = useRef(0)
+
+  console.log(showModal)
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'initial'
+    }
+
+    return () => {
+      document.body.style.overflow = 'initial'
+    }
+  }, [isOpen])
 
   const closeModal = useCallback(() => {
     setShowModal(false)
