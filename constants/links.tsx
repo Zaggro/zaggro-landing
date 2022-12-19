@@ -79,7 +79,7 @@ export const headerLinks = [
   },
   {
     text: 'Blog',
-    href: '/blog',
+    href: '/#blog',
   },
   {
     text: 'Contact',
