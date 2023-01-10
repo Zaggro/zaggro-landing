@@ -1,0 +1,147 @@
+.root {
+  margin: 0 auto 3.75rem auto;
+
+  @include breakpoint('md') {
+    padding: 0 1rem;
+  }
+}
+
+.intro {
+  margin: 0 auto 3.75rem auto;
+  @include breakpoint('md') {
+    max-width: 55.5rem;
+  }
+}
+
+.title {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+  margin-bottom: 3.1875rem;
+
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--gray-lightest);
+
+  a {
+    color: #0096ff;
+  }
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  a {
+    color: #0096ff;
+  }
+}
+
+.roles {
+  margin-bottom: 6.25rem;
+  margin: 0 auto 3.75rem auto;
+  background-color: #320090;
+
+  @include breakpoint('md') {
+    max-width: 1116px;
+    overflow-x: auto;
+  }
+}
+
+.roleItem {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-row-gap: 0.625rem;
+  padding: 0.625rem;
+  font-size: 0.8125rem;
+
+  @include breakpoint('md') {
+    grid-template-columns: 345px 253px 165px 205px 148px;
+
+    padding: 0;
+    &:nth-child(even) {
+      background-color: var(--tertiary-darkest);
+    }
+  }
+
+  &.header {
+    background-image: linear-gradient(
+      to right,
+      var(--tertiary-darkest),
+      var(--gray-darkest)
+    );
+  }
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  @include breakpoint('md') {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+.roleItem {
+  @include breakpoint('sm', max) {
+    & .role {
+      grid-column: 1 / -1;
+    }
+
+    & .team {
+      grid-column: 1 / -1;
+      text-transform: uppercase;
+    }
+
+    & .location {
+      text-transform: uppercase;
+    }
+
+    & .aplyBtn {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.09;
+  color: var(--gray-lightest);
+  text-transform: uppercase;
+
+  @include breakpoint('md') {
+    &.smOnly {
+      display: none;
+    }
+  }
+}
+
+.th {
+  padding: 0.625rem 1.25rem;
+}
+
+.mdOnly {
+  @include breakpoint('sm', max) {
+    display: none;
+  }
+}
+
+.aplyBtn {
+  @include breakpoint('md') {
+    & > * {
+      width: 108px;
+      white-space: nowrap;
+
+      div {
+        min-width: auto;
+      }
+    }
+  }
+}

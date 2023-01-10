@@ -85,6 +85,10 @@ export const headerLinks = [
     text: 'Contact',
     href: '/#contact',
   },
+  {
+    text: 'Careers',
+    href: '/careers',
+  },
 ]
 
 export const footerLinks = [
