@@ -63,6 +63,7 @@ $gradient-color: linear-gradient(
 .container {
   position: relative;
   min-width: 7.75rem;
+  max-width: 100%;
   min-height: 2.25rem;
   padding: 0 1rem;
   display: flex;
